@@ -1,15 +1,11 @@
 theme: "hugo-theme-novela"
-baseURL: "https://example.com"
+baseURL: " "
 languageCode: "en-us"
-title: "Hugo Novela"
+title: "Cervecera Heineken Meoquí"
 pygmentsstyle: 'monokai'
 paginate: 6
 social:
-  twitter: "#"
-  github: "#"
-  instagram: "#"
-  linkedin: "#"
-  dribbble: "#"
-  youtube: "#"
+  twitter: "https://twitter.com/JLManzanaresR"
+  youtube: "https://www.youtube.com/channel/UC_lys0-M4m133GRU8Kl1lBQ"
 taxonomies:
   author: authors
