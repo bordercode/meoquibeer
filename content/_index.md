@@ -1,7 +1,7 @@
 ---
 hero:
-  heading: Welcome to Novela, the simplest way to start publishing with Hugo.
+  heading: La cervecera Heineken en Meoqui, Chihuahua.
   maxWidthPX: 652
 seo:
-  image: /images/hero-2.jpg
+  image: /images/p1.jpg
 ---
