@@ -1,5 +1,5 @@
 theme: "hugo-theme-novela"
-baseURL: " "
+baseURL: "https://cervecera.netlify.app"
 languageCode: "en-us"
 title: "Cervecera Heineken Meoquí"
 pygmentsstyle: 'monokai'
