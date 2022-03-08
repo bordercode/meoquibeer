@@ -13,7 +13,7 @@ title: Metodología
 ### El contexto regulatorio:  Las zonas de disponibilidad de agua subterráne. 
 
 
-![](/p3a.jpg)
+![](./p3a.jpg)
 
 
 ### Índice de volúmen concesionado de agua subterránea. IVCAS.
