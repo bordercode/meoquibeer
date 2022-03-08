@@ -14,7 +14,7 @@ asas
 ### El contexto regulatorio:  Las zonas de disponibilidad de agua subterráne. 
 
 
-![](C:/Users/josel/Desktop/on/web/meoquibeer/themes/hugo-theme-novela/static/images/p3a.png)
+![](/p3a.png)
 
 
 ### Índice de volúmen concesionado de agua subterránea. IVCAS.
