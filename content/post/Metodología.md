@@ -11,4 +11,9 @@ title: Metodología
 ### Volumen concesionado por acuífero.
 
 ### El contexto regulatorio:  Las zonas de disponibilidad de agua subterráne. 
-### Índice de volÚmen concesionado de agua subterránea. IVCAS.
+
+
+![](/p3a.jpg)
+
+
+### Índice de volúmen concesionado de agua subterránea. IVCAS.
