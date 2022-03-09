@@ -9,9 +9,10 @@ title: Metodología
 
 
 ### Volumen concesionado por acuífero.
-asas
+
 
 ### El contexto regulatorio:  Las zonas de disponibilidad de agua subterráne. 
+
 
 
 ![](/p3a.png)
