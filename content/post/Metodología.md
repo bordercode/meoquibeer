@@ -14,7 +14,7 @@ title: Metodología
 ### El contexto regulatorio:  Las zonas de disponibilidad de agua subterráne. 
 
 
-![](/images/p2.png)
+
 ![](/images/p3a.png)
 
 
