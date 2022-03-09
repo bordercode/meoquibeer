@@ -21,7 +21,7 @@ En México la produccón de cerveza alcanzó los 121.6  millones de hectolitros 
 
 Acorde.. con... el consumo llega a  los  (68.7) litros per cápita, lo que ubica a Mëxico en el lugar 22 entre los paises de mayor consumo con un volumen inferior al de  paises  como Estados Unidos y Finlandia y superiror al de paises como: Reino Unido. Canada o Brazil. 
 
-La importancia de la localización. Del total de insumos que requiere la producción de cerveza en México, el 73 \\% son nacionales. El insumo fundamental es el agua, 
+La importancia de la localización. Del total de insumos que requiere la producción de cerveza en México, el 73 \% son nacionales. El insumo fundamental es el agua, 
 
 
 La estructura de mercado de la producción de cerveza es oligopolica y en años recientes, la competencia ha tendido a incrementarse con grandes corporación dominado el mercado 
