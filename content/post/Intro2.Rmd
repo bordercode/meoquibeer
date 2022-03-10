@@ -20,6 +20,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
+
+
+
+
+
+
+
 ## Introducción
 
 La cerveza es la bebida alcohólica de mayor consumo en el mundo. Un insumo indispensable para su elaboración es el agua.  El impacto de la cadena de valor en el uso de los recursos hídricos es considerable, acorde con .. la producción de un litro de cerveza requiere de litros de agua…[@wwf_water_2010]
