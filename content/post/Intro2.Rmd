@@ -1,12 +1,14 @@
 ---
 title: "Introducción"
-author: "JLMR"
+authors:
+- Hugo Authors
 excerpt: Recursos Hídricos subterráneos en la region.
 hero: /images/p2.png
 date: 2022-03-10T21:13:14-05:00
 output: html_document
 bibliography: referencias.bib
 link-citations: yes
+csl: apa-5th-edition.csl
 ---
 
 ```{r setup, include=FALSE}
