@@ -4,7 +4,8 @@ authors:
 date: "2022-03-07"
 excerpt: Recursos Hídricos subterráneos en la region.
 hero: /images/p2.png
-title: Introducción.   
+title: Introducción.  
+bibliography: referencias.bib
 ---
 
 DAD
@@ -15,11 +16,15 @@ SDASD
 
 ## Introducción
 
-La cerveza es la bebida alcoholica de mayor consumo en el mundo. UN insumo indispensable para su elaboración es el agua. 
+La cerveza es la bebida alcohólica de mayor consumo en el mundo. Un insumo indispensable para su elaboración es el agua.  El impacto de la cadena de valor en el uso de los recursos hídricos es considerable, acorde con .. la producción de un litro de cerveza requiere de litros de agua…@wwf_water_2010
+
 
 *Conclusión.*
 
-La situación de escasez creciente y la competencia  entre los diferentes usuarios del agua ha suscitado tensiones y conflictos cada vez más frecuentes. (Constellation Brands en Mexicali, es un ejemplo de esta tendencia que no selimita a nuestro país). 
+La situación de escasez creciente y la competencia  entre los diferentes usuarios de agua ha suscitado tensiones y conflictos cada vez más frecuentes. (Constellation Brands en Mexicali, es un ejemplo de esta tendencia en la región fronteriza entre Mexico y Estados Unidos). 
+
+
+Desde el punto de vista económico, datos sobre **producción**, **consumo** y **exportación** aportan evidencia de la importancia de la cerveza desde la perspectiva de  cadena agroindustrial.   
 
 En México la produccón de cerveza alcanzó los 121.6  millones de hectolitros  en promedio entre 2019 y 2020. 
 
@@ -54,3 +59,4 @@ La estructura de costos de la producción de cerveza.
 
 
 
+# Referencias
