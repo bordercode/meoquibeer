@@ -6,7 +6,6 @@ hero: /images/p2.png
 date: 2022-03-10T21:13:14-05:00
 output: html_document
 bibliography: referencias.bib
-csl: apa-5th-edition.csl
 link-citations: yes
 ---
 
