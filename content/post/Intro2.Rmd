@@ -21,10 +21,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 La cerveza es la bebida alcohólica de mayor consumo en el mundo. Si bien el insumo principal  para su elaboración es el agua, otros insumos agrícolas son fundamentales para lograr su elaboración, como la Cebada y el Lúpulo. estos productos añaden a la huella hidrica de que genera la producción de la cerveza. 
 
-Acorde con Mekonnen (2011) la producción de un litro de cerveza requiere de 298 litros de agua,[@mekonnen_green_2011],  la planta de Meoquí produce  6 millones de hectolitros anualmente  , lo que implica un consumo de agua en la regiÓn de   444,000,000 de hectolitros. (presentar un ejemplo de cotraste para dimensionar el consumo).
+Acorde con Mekonnen (2011) la producción de un litro de cerveza requiere de 300 $m^3$ $ton^(-1)$ de agua, y la cebeda necesarias para producir un litro de cerveza tiene una huella hidrica adicional de 298 $m^3$ $ton^(-1)$ [@mekonnen_green_2011],  la planta de Meoquí produce  6 millones de hectolitros anualmente [@heineken] , lo que implica un consumo de agua en la regiÓn de   444,000,000 de hectolitros. (presentar un ejemplo de cotraste para dimensionar el consumo).
 
 [@wwf_water_2010]
 600*74
+
+1/1000
 
 ## Caracterización del acuífero 
 
