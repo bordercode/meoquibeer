@@ -11,11 +11,10 @@ link-citations: yes
 csl: apa-5th-edition.csl
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-
 
 ## Introducción
 

@@ -10,5 +10,4 @@ social:
 title: José Luis Manzanares Rivera.
 ---
 
-
 Take a clorser look at  José Luis profile [page](https://joseluismanzanaresrivera.github.io/profile/index.html)
