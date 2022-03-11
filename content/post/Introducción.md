@@ -48,15 +48,3 @@ La estructura de mercado de la producción de cerveza es **oligopolica** y en a�
 La estructura de costos de la producción de cerveza. 
 
 
-**El proyecto Meoqui en el contexto  de grupo Heineken en México.**
-
-
-**¿Por que es importante análizar el uso de recursos hídricos subterráneos en el contexto de las actividades economicas?**
-
-
-### El estado de Chihuahua y la utilización de los recursos hidricos subterráneos en la producción de alimentos.
-
-
-
-
-# Referencias
