@@ -12,12 +12,12 @@ csl: apa-5th-edition.csl
 math: true
 ---
 
+
 ```go
 {{ if or .Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
 {{ end }}
 ```
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
