@@ -17,14 +17,6 @@ math: true
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
-# Set to give empty space
-```
-
-
-
-
-
 
 ## Introducción
 
