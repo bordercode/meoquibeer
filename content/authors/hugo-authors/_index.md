@@ -1,7 +1,7 @@
 ---
 title: José Luis Manzanares Rivera.
 avatar: /images/jlmr.jpg
-bio: José Luis Manzanares Rivera es un investigador mexicano especializado en el análisis de datos. CCC
+bio: José Luis Manzanares Rivera es un investigador mexicano especializado en el análisis de datos.
 featured: true
 social:
 - title: twitter
@@ -11,4 +11,4 @@ social:
 title: José Luis Manzanares Rivera.
 ---
 
-Take a clorser look at  José Luis profile [page](https://joseluismanzanaresrivera.github.io/profile/index.html)
+Take a closer look at  José Luis profile [page](https://joseluismanzanaresrivera.github.io/profile/index.html)
