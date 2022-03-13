@@ -4,6 +4,14 @@ languageCode: "en-us"
 title: "Cervecera Heineken Meoquí"
 pygmentsstyle: 'monokai'
 paginate: 6
+
+  [menu]
+      [[menu.main]]
+          identifier = "about"
+          Name = "About"
+          url = "/about/"
+          weight = 0
+
 social:
   twitter: "https://twitter.com/JLManzanaresR"
   youtube: "https://www.youtube.com/watch?v=uJMiS4pNzQ4"
