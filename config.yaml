@@ -5,7 +5,7 @@ title: "Cervecera Heineken Meoquí"
 pygmentsstyle: 'monokai'
 paginate: 6
 
-  [menu]
+[menu]
       [[menu.main]]
           identifier = "about"
           Name = "About"
