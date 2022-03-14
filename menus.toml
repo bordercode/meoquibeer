@@ -1,0 +1,30 @@
+# main menu
+[[main]]
+name = "Bienvenido"
+url = "/"
+weight = 1
+
+[[main]]
+name = "Sesiones"
+url = "blog/"
+weight = 2
+
+[[main]]
+name = "Ejercicios"
+url = "jupyternb/"
+weight = 3
+
+[[main]]
+name = "Contact"
+url = "contact/"
+weight = 4
+
+[[main]]
+name = "Bibliografia"
+url = "Referencias/"
+weight = 5
+
+[[main]]
+name = "Temario"
+url = "Programa/"
+weight = 6
