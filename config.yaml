@@ -13,13 +13,7 @@ social:
   youtube: "https://www.youtube.com/watch?v=uJMiS4pNzQ4"
   
   
-menu: 
-      [[menu.main]]
-          identifier = "about"
-          Name = "About"
-          url = "/about/"
-          weight = 0
-  
+
 taxonomies:
   author: authors
   
