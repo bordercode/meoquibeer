@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 La cerveza es la bebida alcohólica de mayor consumo en el mundo.  
 
-El impacto de la cadena de valor en el uso de los recursos hídricos es considerable.
+El impacto de la **cadena de valor** desde el punto de vista de los recursos hídricos es considerable.
 
 El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto) y otros **insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
 
@@ -40,11 +40,11 @@ El insumo principal  para su elaboración es el agua, (el agua representa el 95%
 
 
 
-Acorde con Mekonnen (2011) la producción de un litro de cerveza requiere de **300** litros de agua, y la cebeda necesaria para producir un litro de cerveza, tiene una huella hidrica adicional, de **298** litros[@mekonnen_green_2011]. 
+Acorde con Mekonnen (2011) la producción de un litro de cerveza implica una huella hídrica de **300** litros de agua. (Unicamente  la Cebeda necesaria para producir un litro de cerveza, tiene una huella hidrica de **298** litros) litros[@mekonnen_green_2011]. 
 
 
 
-Considernado que la planta  **Heineken de Meoquí** produce  **600 millones de litros** anualmente [@heineken], la demanda de **agua** de esta cervecera de origen holandés, en la región Meoqui, alcanza los **180 000 000** metros cúbicos, sin contar la huella hidrica por la producción de cebada^[A diferencia del **impacto ambiental** por el uso de recursos hídricos en la producción de la **cerveza**, el impacto de la huella hidrica de la producción de insumos como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la planta productora, pero recae en la región agricola que produce la Cebada, esta puede ubicarse en un sitio totalmente distinto] que es una porción equivalente. 
+Considernado que la planta  **Heineken de Meoquí** produce  **600 millones de litros** anualmente [@heineken], la demanda de **agua** de esta cervecera de origen holandés, en la región Meoqui, alcanza los **180 000 000** metros cúbicos. Importante ´puntualizar que la huella hidrica atribuible a la producción de cebada se genera en el sitio en donde este se produce^[A diferencia del **impacto ambiental** por el uso de recursos hídricos en la producción de la **cerveza**, el impacto de la huella hidrica de la producción de insumos como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la planta productora, pero recae en la región agricola que produce la Cebada, esta puede ubicarse en un sitio totalmente distinto]. 
 
 
 (presentar un ejemplo de cotraste para dimensionar el consumo).
@@ -76,7 +76,7 @@ Acciones emprendidas por las empresas más importantes de la industria a escala 
 
 Esta tendencia de relocalización de la **industria cervecera global** y las condiciones de ubicación estratégica de México, han contribuido a que nuestro país halla transitado del lugar **20** dentro del ranking de exportadores de cerveza al **primer sitio** y es hoy en día  a escala global  el principal exportador de este producto. 
 
-En otras palabras tenemos una cadena de producción integrada, un mercado altamente concentrado (duopolio en el csao de México) asociado a una  **estrategia de relocalización** de la producción de las principales corporaciónes a esccala global en la industria.
+En otras palabras desde el punto de vista económico tenemos una cadena de producción integrada en el sector agro-industrial que involucra  168 actividades economicas , un mercado altamente concentrado (duopolio en el csao de México) asociado a una  **estrategia de relocalización** de la producción de las principales corporaciónes a esccala global en la industria.
 
 Desde el punto de vista de los recursos hídicos a escala local, esta configuración, implica al menos dos impactos:  
 
