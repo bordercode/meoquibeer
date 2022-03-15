@@ -84,7 +84,42 @@ La obtención de este recurso estratégico ha implicado que las empresas dedicad
 Acciones emprendidas por las empresas más importantes de la industria a escala global incluyen la **relocalización**, lo cual see ha conseguido, entro otros elementos, mediante fusiones con empresas productoras en otra regiones del mundo  donde se han identificado condiciones favorables de acceso a los insumos para su producción. 
 
 
-Esta tendencia de relocalización de la **industria cervecera global** y las condiciones de ubicación estratégica de **México**, han contribuido a que nuestro país halla transitado del lugar **20** dentro del ranking de exportadores de cerveza en los años previos  1995, al **primer sitio**  en 2022 . México se ubica hoy en día, como  el principal exportador de este producto a escala global. 
+Esta tendencia de relocalización de la **industria cervecera global** y las condiciones de ubicación estratégica de **México**, han contribuido a que nuestro país halla transitado del lugar **20** dentro del ranking de exportadores de cerveza en 1965 al **primer sitio**  en 2022. México se ubica hoy en día, como  el principal exportador de este producto a escala global. 
+
+```{r}
+x<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/x_country2019.csv")
+
+top20<-x%>%head(21)%>%filter(País!="European Union")%>%
+  select(País, Trade.Value.1000USD)%>%
+  rename(Valor=Trade.Value.1000USD)%>%
+  mutate(Mx=as.factor(ifelse(País=="Mexico",1,0)))
+
+average<-summarize(top20,promedio=mean(Valor))
+```
+**Principales paises según Valor de la Exportaciones de Cerveza 2019**
+```{r, fig.height = 6, fig.width=10}
+library(scales)
+
+px<-ggplot(top20, aes(x=reorder(País,Valor), Valor, fill=Mx))+
+  geom_col()+
+  coord_flip()+
+  theme_light()+
+  theme(legend.position="none")+ 
+  labs(y = "Valor de las exportaciones en Millones USD (precios constantes)")+
+  labs(x = "Páís exportador")+
+  scale_fill_manual(values=c("dimgray",
+                                "deepskyblue4"))+
+  scale_y_continuous(labels = label_number(suffix = " M", scale = 1e-3))+
+  geom_hline(yintercept =719012.2, linetype="dashed",color = "red2", size=.2)+
+  annotate(geom = "text", x = 5.6, y = 1000000, label = "Valor promedio de Xports", hjust = "left")
+
+ggplotly(px)
+
+```
+
+
+*Fuente*: Elaboración propia con datos de  [Banco Mundial 2019](https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2019/tradeflow/Exports/partner/WLD/product/220300)
+
 
 Entre 2003 y 2021  el mercado de destino para exportación de la cerveza producida por los corporativos de capital Bélga y Holandés en México  incluye 165 países. No obstante, sólo un destino concentra el **86% del total exportado**: Estados Unidos.[@torres_siavi_2022]  
 
@@ -151,8 +186,11 @@ En otras palabras, desde el punto de vista económico, la producción de cerveza
 
 
 Atender ese mercado es factible gracias a la operación de plantas recientemente instaladas en territorio nacional como **HEINEKEN MEOQUI.** que abre operaciones en el 27 de febrero de **2018**, en una región a una distancia de 314km.  de la frontera con **Estados Unidos** (via Ojinaga o 454 km. via El Paso, Tx.) y donde la disputa por los recursos hídricos ha sucitado ya severos conflictos entre los diferentes grupos de usuarios. 
-Tal como se documenta por medios internacionales entre ellos el New york times de fecha 11 octubre de 2020.
-[TNYT](https://www.nytimes.com/es/2020/10/14/espanol/america-latina/chihuahua-mexico-pago-agua.html)
+Tal como se documenta por medios internacionales, entre ellos el New york Times de fecha 11 octubre de 2020.
+[TNYT](https://www.nytimes.com/es/2020/10/14/espanol/america-latina/chihuahua-mexico-pago-agua.html).
+
+La evidencia empírica muestra que la trayectoria de exportación de cerveza de México, se ha transformado a partir del cambio en los esquemas de comercio internacional. 
+El primer hito en este sentido se presento en.
 
 
 Desde el punto de vista de los recursos hídicos a escala local, esta configuración, implica al menos dos impactos:  
