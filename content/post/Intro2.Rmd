@@ -92,7 +92,7 @@ x<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/x_country2019.csv")
 top20<-x%>%head(21)%>%filter(País!="European Union")%>%
   select(País, Trade.Value.1000USD)%>%
   rename(Valor=Trade.Value.1000USD)%>%
-  mutate(Mx=as.factor(ifelse(País=="Mexico",1,0)))
+  mutate(tres=as.factor(ifelse(País=="Mexico",1 ,ifelse(País=="Netherlands",2,(ifelse(País=="Belgium",3 ,0))))))
 
 average<-summarize(top20,promedio=mean(Valor))
 ```
@@ -100,7 +100,7 @@ average<-summarize(top20,promedio=mean(Valor))
 ```{r, fig.height = 6, fig.width=10}
 library(scales)
 
-px<-ggplot(top20, aes(x=reorder(País,Valor), Valor, fill=Mx))+
+px<-ggplot(top20, aes(x=reorder(País,Valor), Valor, fill=tres))+
   geom_col()+
   coord_flip()+
   theme_light()+
@@ -108,7 +108,7 @@ px<-ggplot(top20, aes(x=reorder(País,Valor), Valor, fill=Mx))+
   labs(y = "Valor de las exportaciones en Millones USD (precios constantes)")+
   labs(x = "Páís exportador")+
   scale_fill_manual(values=c("dimgray",
-                                "deepskyblue4"))+
+                                "deepskyblue4","orangered", "orange"))+
   scale_y_continuous(labels = label_number(suffix = " M", scale = 1e-3))+
   geom_hline(yintercept =719012.2, linetype="dashed",color = "red2", size=.2)+
   annotate(geom = "text", x = 5.6, y = 1000000, label = "Valor promedio de Xports", hjust = "left")
@@ -164,9 +164,9 @@ df<- cbind(top10, df)%>%select(-pais)
   
 ##Valor en dólares y Volumen en L
 ```
-
+**Participación (%) Paises Destino. Cerveza exportada desde México 2021.**
 ```{r, fig.height = 6, fig.width=10}
-ggplot(df, aes(x=reorder(country,p),  p, fill=main ))+
+dx<-ggplot(df, aes(x=reorder(country,p),  p, fill=main ))+
   geom_col()+
   coord_flip()+
   theme_light()+
@@ -175,11 +175,12 @@ ggplot(df, aes(x=reorder(country,p),  p, fill=main ))+
   labs(x = "País destino")+
   scale_fill_manual(values=c("dimgray",
                                 "deepskyblue4"))+
-  geom_hline(yintercept =85, linetype="dashed",color = "red2", size=.5)+
-  annotate(geom = "text", x = 5.6, y = 80, label = "86%", hjust = "left")
+  geom_hline(yintercept =85, linetype="dashed",color = "red2", size=.2)+
+  annotate(geom = "text", x = 11, y = 80, label = "86%", hjust = "left")
 
-
+ggplotly(dx)
 ```
+*Fuente: Sistema de Información Comercial Via Internet [SIAVI](http://www.economia-snci.gob.mx/). 2021*
 
 En otras palabras, desde el punto de vista económico, la producción de cerveza, en el caso de México, tenemos una cadena de producción integrada en el sector agro-industrial, un mercado altamente concentrado (duopolio de capital extranjero) asociado a una  **estrategia de relocalización** de la producción de las principales corporaciónes a esccala global en la industria. En donde un páis: **Estados Unidos**, es el mercado principal que recibe los recursos hidricos asociados a la cerveza exportada. 
 
