@@ -32,6 +32,7 @@ La cerveza es la bebida alcohólica de mayor consumo en el mundo.
 
 Se estima que su producción involucra una integración distribuida a lo largo  **168 actividades económicas**[@INEGI].  No obstante, el impacto de la **cadena de valor** desde el punto de vista de los recursos hídricos es considerable. 
 
+
 El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto, paradójicamente, el valor de este insumo representa sólo el **0.8%** del valor de total de los insumos empleados para su producción[@INEGI]. 
 
 De manera complementaria **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
@@ -49,7 +50,7 @@ Acorde con Mekonnen (2011), la producción de un litro de cerveza implica una hu
 
 Considernado que la planta  **Heineken de Meoquí** produce  **600 millones de litros** anualmente, [@eluyde_heineken_2018] la planta genera una huella hídrica que alcanza los **180 000 000 000** litros anuales.  
 
-Adicionalmente, la información disponible sobre la utilizaci[on de agua el el proceso productivo por parte de la planta Heineken permite determinar que la demanda directa de recursos hídricos en la región es de **2,100 millones de litros**.  
+Adicionalmente, la información disponible sobre la utilización de agua el el proceso productivo por parte de la planta Heineken permite determinar que la demanda directa de recursos hídricos en la región es de **2,100 millones de litros**.  
 
 Para contextualizar, este volumen representa el **44%** del volumen concesionado al principal usuario de agua subterránea en el municipio: la **Junta Municipal de Agua y Saneamiento de Meoqui**  organismo que destina el recurso para abastecer a la población con un uso clasificado como **público urbano**[@REPDA]
 
