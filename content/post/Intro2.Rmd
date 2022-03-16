@@ -35,7 +35,7 @@ Se estima que su producción involucra una integración distribuida a lo largo  
 
 El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto, paradójicamente, el valor de este insumo representa sólo el **0.8%** del valor de total de los insumos empleados para su producción[@INEGI]. 
 
-De manera complementaria **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
+De manera complementaria **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza.^[A diferencia del **impacto ambiental** por el uso de recursos hídricos en la producción de la **cerveza**, el impacto de la huella hidrica de la producción de insumos como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la planta productora, pero recae en la región agricola que produce la Cebada, (en el caso de México, GUanajuato es la principal entidad  productora de Cebada generando 1 de cada 3 toneladas que se producen en México o 36.8 % de la producción total nacional, [@INEGI])]. 
 
 
 
@@ -47,16 +47,15 @@ De manera complementaria **Insumos agrícolas** fundamentales como la **Cebada**
 Acorde con Mekonnen (2011), la producción de un litro de cerveza implica una huella hídrica de **300** litros de agua. (Unicamente  la Cebeda necesaria para producir un litro de cerveza, tiene una huella hidrica de **298** litros) [@mekonnen_green_2011]. 
 
 
-
-Considernado que la planta  **Heineken de Meoquí** produce  **600 millones de litros** anualmente, [@eluyde_heineken_2018] la planta genera una huella hídrica que alcanza los **180 000 000 000** litros anuales.  
-
-Adicionalmente, la información disponible sobre la utilización de agua el el proceso productivo por parte de la planta Heineken permite determinar que la demanda directa de recursos hídricos en la región es de **2,100 millones de litros**.  
+Considernado que la planta  **Heineken de Meoquí** produce  **600 millones de litros** anualmente, [@eluyde_heineken_2018]
+el proceso implica una demanda directa de recursos hídricos en la región de **2,100 millones de litros**.  
 
 Para contextualizar, este volumen representa el **44%** del volumen concesionado al principal usuario de agua subterránea en el municipio: la **Junta Municipal de Agua y Saneamiento de Meoqui**  organismo que destina el recurso para abastecer a la población con un uso clasificado como **público urbano**[@REPDA]
 
-Desde el contexto local, por ejemplo,la demanda de la planta Heineken representa **14.3** veces la demanda importantes usuarios de tipo industrial en el Municipio, como la embotelladora de bebidas, refrescos unión. S.A. 
+Desde el contexto local, esta demanda de agua representa **14.3** veces la demanda de importantes usuarios de tipo industrial en el Municipio, como la embotelladora de bebidas, refrescos unión. S.A. 
 
-
+Por otra parte desde la perspectiva de impacto amabiental, la planta genera una huella hídrica que alcanza los **180 000 000 000** litros anuales. 
+ 
 
 ```{r,include = FALSE}
 
@@ -102,7 +101,7 @@ ggplot(volumen, aes(x=reorder(Uso,p),p ))+
 
 
 
-Importante notar que la huella hidrica atribuible a la producción de cebada se genera en el sitio en donde esta se produce^[A diferencia del **impacto ambiental** por el uso de recursos hídricos en la producción de la **cerveza**, el impacto de la huella hidrica de la producción de insumos como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la planta productora, pero recae en la región agricola que produce la Cebada, (en el caso de México, GUanajuato es la principal entidad  productora de cebada generando 1 de cada 3 toneladas que se producen en México  36.8 % [@INEGI]) esta puede ubicarse en un sitio totalmente distinto]. 
+
 
 
 (presentar un ejemplo de cotraste para dimensionar el consumo).
