@@ -34,7 +34,7 @@ La cerveza es la bebida alcohólica de mayor consumo en el mundo.
 
 Se estima que su producción involucra una integración distribuida a lo largo  **168 actividades económicas**.  No obstante, el impacto de la **cadena de valor** desde el punto de vista de los recursos hídricos es considerable. 
 
-El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto) y otros **insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
+El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto, paradójicamente, el valor de este insumo muy barato, ya que representa sólo el 0.8% del valor de total de los insumos empleados para su producción. [@INEGI]. Otros **insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
 
 
 
@@ -47,7 +47,7 @@ Acorde con Mekonnen (2011) la producción de un litro de cerveza implica una hue
 
 
 
-Considernado que la planta  **Heineken de Meoquí** produce  **600 millones de litros** anualmente [@heineken], la demanda de **agua** de esta cervecera de origen holandés, en la región Meoqui, alcanza los **180 000 000** metros cúbicos. Importante puntualizar que la huella hidrica atribuible a la producción de cebada se genera en el sitio en donde este se produce^[A diferencia del **impacto ambiental** por el uso de recursos hídricos en la producción de la **cerveza**, el impacto de la huella hidrica de la producción de insumos como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la planta productora, pero recae en la región agricola que produce la Cebada, esta puede ubicarse en un sitio totalmente distinto]. 
+Considernado que la planta  **Heineken de Meoquí** produce  **600 millones de litros** anualmente [@heineken], la demanda de **agua** de esta cervecera de origen holandés, en la región Meoqui, alcanza los **180 000 000** metros cúbicos. Importante puntualizar que la huella hidrica atribuible a la producción de cebada se genera en el sitio en donde este se produce^[A diferencia del **impacto ambiental** por el uso de recursos hídricos en la producción de la **cerveza**, el impacto de la huella hidrica de la producción de insumos como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la planta productora, pero recae en la región agricola que produce la Cebada, (en el caso de México, GUanajuato es la principal entidad  productora de cebada generando 1 de cada 3 toneladas que se producen en México  36.8 % [@INEGI]) esta puede ubicarse en un sitio totalmente distinto]. 
 
 
 (presentar un ejemplo de cotraste para dimensionar el consumo).
@@ -88,6 +88,12 @@ Esta tendencia de relocalización de la **industria cervecera global** y las con
 
 ```{r}
 x<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/x_country2019.csv")
+
+# cifras de exportacion en litros 4465290000/1000000  x
+
+#  Porporcion de X respecto al total producido en litros. 4465/12450 =35.8% Una de cada tres cervezas producidas se exporta.
+
+
 
 top20<-x%>%head(21)%>%filter(País!="European Union")%>%
   select(País, Trade.Value.1000USD)%>%
