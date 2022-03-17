@@ -30,7 +30,7 @@ library(stringr)
 
 La cerveza es la bebida alcohólica de mayor consumo en el mundo.  
 
-Se estima que su producción involucra una integración distribuida a lo largo  **168 actividades económicas**[@INEGI].  
+Se estima que su producción involucra una cade de valor cuya integración esta distribuida a lo largo  **168 actividades económicas**[@INEGI].  
 
 
 El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto y el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable. 
