@@ -4,10 +4,15 @@ avatar: /images/jlmr.jpg
 bio: José Luis Manzanares Rivera es un investigador mexicano especializado en el análisis de datos.
 featured: true
 social:
-  twitter: "https://twitter.com/JLManzanaresR"
-  youtube: "https://www.youtube.com/watch?v=uJMiS4pNzQ4"
-  instagram: "https://www.instagram.com/jlmanzanaresr/"
-  medium: "https://medium.com/@jlmanzanares"
+- title: twitter
+  url: https://twitter.com/JLManzanaresR
+- title: youtube
+  url: https://www.youtube.com/watch?v=uJMiS4pNzQ4
+- title: instagram
+  url: https://www.instagram.com/jlmanzanaresr/
+- title: medium
+  url: https://medium.com/@jlmanzanares
+    
 title: José Luis Manzanares Rivera.
 ---
 
