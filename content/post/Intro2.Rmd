@@ -33,9 +33,89 @@ La cerveza es la bebida alcohólica de mayor consumo en el mundo.
 Se estima que su producción involucra una cadena de valor cuya integración esta distribuida a lo largo  **168 actividades económicas**[@INEGI].  
 
 
-El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto y el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable. 
+El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto y el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable, ya que la producción de un litro de cerveza implica una huella hídrica de **300** litros de agua.[@mekonnen_green_2011]
 
-No obstante, en México el costo de este insumo representa sólo el **0.8%** del valor de total de los insumos empleados para su producción[@INEGI]. 
+No obstante, en México el costo de este insumo representa sólo el **0.8%** del costo total de los insumos necesarios para su producción[@INEGI]. 
+
+
+```{r, include=FALSE}
+
+p<-read.csv("prices.csv")%>%
+  mutate(ciudad=as.factor(ciudad), usd=Total/20.3627, cdmx=as.factor(ifelse(ciudad=="Ciudad de Mexico (Mexico)",1,ifelse(ciudad=="Copenhage (Dinarnarca)",2,0))))
+
+```
+
+
+*Tarifas domésticas de agua potable, saneamiento e impuestos asociados al servicio en algunas ciudades del mundo, 2015.*
+
+```{r}
+
+plotp<-ggplot(p, aes(x=reorder(ciudad,usd),usd, fill=cdmx ))+
+  geom_col()+
+  coord_flip()+
+  theme_light()+
+  theme(legend.position="none")+ 
+  labs(y = "Tarifas en USD/m³, para un consumo de 15 m³/mes")+
+  labs(x = "Ciudad")+
+  scale_fill_manual(values=c("dimgray",
+                                "deepskyblue4", "red"))
+ggplotly(plotp)
+```
+*Nota: (tarifas en USD/m³, para un consumo de 15 m³/mes)*
+Fuente: GWI. 2015. Global Water Tariff Survey. Published by Global Water Intelligence. [CONAGUA](http://sina.conagua.gob.mx/sina/tema.php?tema=tarifas&n=mundial).
+
+
+```{r, include=FALSE}
+
+tarifas<-read.csv("t.csv")%>%
+  mutate(i=as.numeric(i)/20.3627,d=d/20.3627,c=c/20.3627)%>%
+  select(-id)
+
+ t<- pivot_longer(tarifas, d:i)%>%
+   rename(tipo=name  , tarifa=value)
+
+```
+
+*Tarifas de agua para uso industrial en las top 40 ciudades según costo, 2020 (pesos/m³*
+
+```{r}
+
+indus<-mutate(t,del=as.factor(ifelse(ciudad=="Delicias",1,0)), tarifa=tarifa/20.3627)%>%
+filter(tipo=="i")
+  
+
+indus <- indus %>%
+  arrange(tarifa) %>%
+  mutate(ciudad=factor(ciudad,ciudad))%>%
+  filter(!is.na(tarifa)) 
+
+plt2<-ggplot(indus, aes(ciudad, y=tarifa)) +
+geom_segment(
+    aes(x=ciudad, xend=ciudad, y=0, yend=tarifa), 
+    color=ifelse(indus$ciudad %in% c("Delicias", "Chihuahua"), "deepskyblue4", "grey"), 
+    size=ifelse(indus$ciudad %in% c("Delicias","Chihuahua"), 1.3, 0.7)
+  ) +
+  geom_point(color=ifelse(indus$ciudad %in% c("Delicias","Chihuahua"), "red", "grey"), 
+    size=ifelse(indus$ciudad %in% c("Delicias","Chihuahua"), 3, 2)
+  ) +
+  coord_flip() +
+  theme(legend.position="none") +
+  xlab("") +
+  ylab("Tarifa (USD/m3)") +
+  theme_classic()+
+  labs(caption="Nota para un consumo de 30m3/mes")
+
+ggplotly(plt2)
+
+```
+*Nota: Para un consumo de 30m^3/mes.*
+**FUENTE:** [CONAGUA](http://sina.conagua.gob.mx/sina/tema.php?tema=tarifas&n=nacional). 2020. Subdirección General de Agua Potable, Drenaje y Saneamiento. Gerencia de Fortalecimiento de Organismos Operadores
+
+
+(Unicamente  la Cebeda necesaria para producir un litro de cerveza, tiene una huella hidrica de **298** litros^[A diferencia del **impacto ambiental** por el uso de recursos hídricos en la producción de la **cerveza**, el impacto de la huella hidrica de la producción de insumos como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la planta productora, pero recae en la región agricola que produce la Cebada, (en el caso de México, GUanajuato es la principal entidad  productora de Cebada generando 1 de cada 3 toneladas que se producen en México o 36.8 % de la producción total nacional, [@INEGI])]. 
+
+Acorde con el Instituto Mexicano de Tecnología del Agua, la producción de Cebada tiene una huella hídrica de  49 metros cubicos/ ton.[@hh]  Por lo que al considerar la producción de Cebada en grano reportada por el Sistema de Información Agroalimentaria de Consulta en México para 2020[@siacon], (864,293.27 ton.), es posible estimar que se tuvo una HH de  42.3 millones de metros cúbicos de agua (subterránea y superficial)) [@mekonnen_green_2011]. 
+
 
 De manera complementaria **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza.
 
@@ -46,8 +126,7 @@ De manera complementaria **Insumos agrícolas** fundamentales como la **Cebada**
 
 
 
-Acorde con Mekonnen (2011), la producción de un litro de cerveza implica una huella hídrica de **300** litros de agua. (Unicamente  la Cebeda necesaria para producir un litro de cerveza, tiene una huella hidrica de **298** litros^[A diferencia del **impacto ambiental** por el uso de recursos hídricos en la producción de la **cerveza**, el impacto de la huella hidrica de la producción de insumos como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la planta productora, pero recae en la región agricola que produce la Cebada, (en el caso de México, GUanajuato es la principal entidad  productora de Cebada generando 1 de cada 3 toneladas que se producen en México o 36.8 % de la producción total nacional, [@INEGI])]. 
-Acorde con el Instituto Mexicano de Tecnología del Agua, la producción de Cebada tiene una huella hídrica de  49 metros cubicos/ ton.[@hh]  Por lo que al considerar la producción de Cebada en grano reportada por el Sistema de Información Agroalimentaria de Consulta en México para 2020[@siacon], (864,293.27 ton.), es posible estimar que se tuvo una HH de  42.3 millones de metros cúbicos de agua (subterránea y superficial)) [@mekonnen_green_2011]. 
+
 
 
 Considerando que la planta  **Heineken de Meoquí** produce  **600 millones de litros** anualmente[@eluyde_heineken_2018], y que el proceso productivo de cerveza  Heineken requiere en promedio de 3.5 lt. agua por litro de cerveza  [@heineken_every_2019], 

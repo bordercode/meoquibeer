@@ -36,5 +36,104 @@ counts<-filter(a, Estado=="Chihuahua"& Parámetro=="Extraccion")%>%
   group_by(Año, Estado)%>%
   count()
 
+
+49*864293.27
+
+
+```
+
+
+```{r}
+
+### Prices.
+
+
+
+p<-read.csv("prices.csv")%>%
+  mutate(ciudad=as.factor(ciudad), usd=Total/20.3627, cdmx=as.factor(ifelse(ciudad=="Ciudad de Mexico (Mexico)",1,ifelse(ciudad=="Copenhage (Dinarnarca)",2,0))))
+
+
+
+plotp<-ggplot(p, aes(x=reorder(ciudad,usd),usd, fill=cdmx ))+
+  geom_col()+
+  coord_flip()+
+  theme_light()+
+  theme(legend.position="none")+ 
+  labs(y = "Tarifas en USD/m³, para un consumo de 15 m³/mes")+
+  labs(x = "Ciudad")+
+  scale_fill_manual(values=c("dimgray",
+                                "deepskyblue4", "red"))
+
+plotp
+
+
+
+tarifas<-read.csv("t.csv")%>%
+  mutate(i=as.numeric(i)/20.3627,d=d/20.3627,c=c/20.3627)%>%
+  select(-id)
+
+ t<- pivot_longer(tarifas, d:i)%>%
+   rename(tipo=name  , tarifa=value)
+
+## Plot  para mostrar la relación positiva entre tarifa industrial y doméstica. Esta relación demuestra que es posible tomar la representación de tarifas  domésticas entre ciudades en el mundo para comprender que México, tiene un costo bajo del agua.
+ 
+ 
+ dom_indus_plot<-ggplot(tarifas, aes(d,i))+
+   geom_point()+
+  geom_smooth(method = "lm", se = TRUE)+
+   theme_classic()+
+  labs(x = "Industrial USD  30m3/mes")+
+   labs(y = "doméstica USD 30m3/mes")
+   
+dom_indus_plot 
+## Plot para comparar tarifas de agua para uso doméstico entre ciudades.
+ 
+ 
+ 
+ 
+ 
+
+## Plot  mundial 
+
+#Tarifas domésticas de agua potable, saneamiento e impuestos asociados al servicio en algunas ciudades del mundo, 2015. (tarifas en pesos/m³, para un consumo de 15 m³/mes)
+# EX rate 20.3627 pesos / USD  nominal   marzo 18  2022.
+
+
+## PLot Nacional 
+
+#Tarifas de agua para los tres usos en algunas ciudades, 2020 (pesos/m³)  Nota. Para un consumo de 30m^3/mes.
+
+#FUENTE: CONAGUA. 2020. Subdirección General de Agua Potable, Drenaje y Saneamiento. Gerencia de Fortalecimiento de Organismos Operadores.
+
+```
+
+```{r}
+indus<-mutate(t,del=as.factor(ifelse(ciudad=="Delicias",1,0)), tarifa=tarifa/20.3627)%>%
+filter(tipo=="i")
+  
+
+indus <- indus %>%
+  arrange(tarifa) %>%
+  mutate(ciudad=factor(ciudad,ciudad))%>%
+  filter(!is.na(tarifa)) 
+
+plt2<-ggplot(indus, aes(ciudad, y=tarifa)) +
+geom_segment(
+    aes(x=ciudad, xend=ciudad, y=0, yend=tarifa), 
+    color=ifelse(indus$ciudad %in% c("Delicias", "Chihuahua"), "deepskyblue4", "grey"), 
+    size=ifelse(indus$ciudad %in% c("Delicias","Chihuahua"), 1.3, 0.7)
+  ) +
+  geom_point(color=ifelse(indus$ciudad %in% c("Delicias","Chihuahua"), "red", "grey"), 
+    size=ifelse(indus$ciudad %in% c("Delicias","Chihuahua"), 3, 2)
+  ) +
+  coord_flip() +
+  theme(legend.position="none") +
+  xlab("") +
+  ylab("tarifa (USD/m3)") +
+  theme_classic()+
+  labs(caption="Nota para un consumo de 30m3/mes")
+
+ggplotly(plt2)
+
 ```
 
