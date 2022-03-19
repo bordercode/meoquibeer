@@ -46,9 +46,9 @@ p<-read.csv("prices.csv")%>%
 ```
 
 
-*Tarifas domésticas de agua potable, saneamiento e impuestos asociados al servicio en algunas ciudades del mundo, 2015.*
+**Tarifas domésticas de agua potable, saneamiento e impuestos asociados al servicio en algunas ciudades del mundo, 2015.**
 
-```{r}
+```{r, fig.height = 6, fig.width=8}
 
 plotp<-ggplot(p, aes(x=reorder(ciudad,usd),usd, fill=cdmx ))+
   geom_col()+
@@ -76,9 +76,9 @@ tarifas<-read.csv("t.csv")%>%
 
 ```
 
-*Tarifas de agua para uso industrial en las top 40 ciudades según costo, 2020 (pesos/m³*
+**Tarifas de agua para uso industrial. Principales 40 ciudades según costo, 2020**
 
-```{r}
+```{r, fig.height = 6, fig.width=8}
 
 indus<-mutate(t,del=as.factor(ifelse(ciudad=="Delicias",1,0)), tarifa=tarifa/20.3627)%>%
 filter(tipo=="i")
