@@ -116,7 +116,6 @@ ggplotly(plt2)
 
 De manera complementaria la produción de **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
 
-Estudios especializados sobre Huella hídrica (HH), estiman que  para producir un litro de cerveza, la  **Cebeda**, genera una HH de **298** litros[@mekonnen_green_2011]^[ si bien, debido a que existe una gran variabilidad asociada a las condiciones productivas regionales  los estimados de HH ha sido objeto de controversía. En todo caso la metodología para estimación de HH debe diseñarse considerando las variables específicas de la región de estudio. Adicionalmente, es importante notar que el impacto de la huella hidrica de la producción de insumos  como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la compañia productora de cerveza, pero recae en la región agrícola que produce la Cebada, (en el caso de México, Guanajuato es la principal entidad  productora de Cebada generando 1 de cada 3 toneladas que se producen en México o 36.8 % de la producción total nacional, [@INEGI])]. 
 
 Acorde con el Instituto Mexicano de Tecnología del Agua, la producción de Cebada tiene una huella hídrica de  49 metros cubicos/ ton.[@hh]  
 
@@ -125,6 +124,12 @@ Por lo que al considerar la producción de Cebada en grano reportada por el Sist
 
 ![](/images/cebada.png)
 ![](/images/lúpulo.jpg)
+
+
+
+
+Estudios especializados sobre Huella hídrica (HH), estiman que  para producir un litro de cerveza, la  **Cebeda**, genera una HH de **298** litros[@mekonnen_green_2011]^[ si bien, debido a que existe una gran variabilidad asociada a las condiciones productivas regionales  los estimados de HH ha sido objeto de controversía. En todo caso la metodología para estimación de HH debe diseñarse considerando las variables específicas de la región de estudio. Adicionalmente, es importante notar que el impacto de la huella hidrica de la producción de insumos  como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la compañia productora de cerveza, pero recae en la región agrícola que produce la Cebada, (en el caso de México, Guanajuato es la principal entidad  productora de Cebada generando 1 de cada 3 toneladas que se producen en México o 36.8 % de la producción total nacional, [@INEGI])]. 
+
 
 
 
