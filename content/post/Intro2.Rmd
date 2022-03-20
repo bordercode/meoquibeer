@@ -3,7 +3,7 @@ title: "Motivación"
 authors:
 - JoseLuis-Manzanares 
 excerpt: Recursos Hídricos subterráneos en la region.
-hero: /images/beer1.jpg
+hero: /images/beera.jpg
 date: 2022-03-10T21:13:14-05:00
 output: html_document
 bibliography: referencias.bib
@@ -26,7 +26,7 @@ library(stringr)
 
 
 
-## Introducción
+### El agua en la prodcción de cerveza. 
 
 La cerveza es la bebida alcohólica de mayor consumo en el mundo.  
 
