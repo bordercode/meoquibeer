@@ -33,13 +33,9 @@ La cerveza es la bebida alcohólica de mayor consumo en el mundo.
 Se estima que su producción en México involucra una cadena de valor cuya integración está distribuida a lo largo  **168 actividades económicas**[@INEGI].  
 
 
-El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto). Una forma comumenete aceptada para medir la intensidad en el uso de los recursos hídricos de un producto,  es a través del concepto de la huella hídirca (HH).
+El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto). Una metodología comúnmente utilizada,  para medir la intensidad en el uso de los recursos hídricos de un producto,  es a través del concepto de la huella hídirca (HH). ^[un concepto, que si bien, esta en desarollo y tiene importantes críticas debido a la hetereogeneidad de las condiciones productivas, que incluyen las variables ambientales, es útil como base de comparación.] 
 
-Se estima que la producción de un litro de cerveza implica una huella hídrica de **300** litros,[@mekonnen_green_2011] por lo que, el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable. 
-
-
-Al respecto, la produción de **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
-
+Se estima que la producción de un litro de cerveza implica una huella hídrica de **300** litros,[@mekonnen_green_2011] y la produción de **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza, por lo que, el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable. 
 
 Acorde con el Instituto Mexicano de Tecnología del Agua, la producción de Cebada tiene una huella hídrica de  49 metros cubicos/ ton.[@hh]  
 
