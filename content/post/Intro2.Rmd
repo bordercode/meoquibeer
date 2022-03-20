@@ -1,5 +1,5 @@
 ---
-title: "Introducción"
+title: "Motivación"
 authors:
 - JoseLuis-Manzanares 
 excerpt: Recursos Hídricos subterráneos en la region.
@@ -58,62 +58,12 @@ Estudios especializados sobre Huella hídrica (HH), estiman que  para producir u
 
 
 
-Considerando que la planta  **Heineken de Meoquí** produce  **600 millones de litros** anualmente[@eluyde_heineken_2018], y que el proceso productivo de cerveza  Heineken requiere en promedio de 3.5 lt. agua por litro de cerveza  [@heineken_every_2019], 
-el proceso implica una demanda directa de recursos hídricos en la región de **2,100 millones de litros** anuales.^[ Considerando las cifras oficiales de **Heineken**, sobre volumen de producción anual así como el requerimiento de agua, declarado. Requerimiento de agua de 3.5 hl/hl,  una producción anual de 600 millones de litros[@heineken_every_2019] y el registro de volumen concesionado  en REPDA por parte de la JMAS. que es de 4,462 millones de litros]  
-
-Este volumen representa el **44%** del volumen concesionado al principal usuario de agua subterránea en el municipio: la **Junta Municipal de Agua y Saneamiento de Meoqui**  organismo que destina el recurso para abastecer a la población con un uso clasificado como **público urbano**[@REPDA]^[
-Desde el contexto local, esta demanda de agua representa **14.3** veces la demanda de importantes usuarios de tipo industrial en el Municipio, como la embotelladora de bebidas, refrescos unión. S.A.]
-
-Desde la perspectiva de impacto amabiental, la planta genera una huella hídrica que alcanza los **180 000 000 000** litros anuales. 
- 
-
-```{r,include = FALSE}
-
-
-#4,762,000,000  LITROS
-   #2100000000/4762000000 
-
-  #2100000000/145924000
-#145924000/4762000000
-
-
-
-repda<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/repda_meoqui.csv")
-
-volumen<-group_by(repda, Uso)%>%
-summarize(Volumen=sum(Volumen.de.extracción.de.aguas.nacionales..m3.a.o.))%>%
-mutate(porc=Volumen/sum(Volumen), p=round(porc,3)*100, Uso=as.factor(Uso) )
-
-uso<-count(repda, Uso)
-
-uso<-group_by(repda, Uso)%>%
-  count()
-
-industrial<-filter(repda, Uso=="INDUSTRIAL")
-
-glimpse(repda)
-names(repda)
-
-str(volumen)
-
-```
-
-```{r,include = FALSE}
-ggplot(volumen, aes(x=reorder(Uso,p),p ))+
-  geom_col()
-```
-
-
-  
-
-
-
-### Estructura de Mercado
+### Considetacones sobre estructura de Mercado en México.
 
 La industria cervecera mundial se integra bajo una estructura **oligopólica.** 
 
 
-En nuestro país este esquema de mercado para la cerveza tiene un grado mayor de concentración y de hecho **dos** grandes consorcios son los que dominan el mercado: **AB InBev** (Empresa de capital **Belga**) antes grupo Modelo, empresa fundada en **ciudad de México** y Heineken (empresa **holandesa**) antes **Cuauhtémoc-Moctezuma** fundada en **Monterrey**, Nuevo León. 
+En nuestro país, este esquema de mercado para la cerveza tiene un grado mayor de concentración y de hecho **dos** grandes consorcios son los que dominan el mercado: **AB InBev** (Empresa de capital **Belga**) antes grupo Modelo, empresa fundada en **ciudad de México** y Heineken (empresa **holandesa**) antes **Cuauhtémoc-Moctezuma** fundada en **Monterrey**, Nuevo León. 
 
 
 ![](/images/duo.png)
@@ -130,7 +80,7 @@ Mientras la Belga **AB Inbev** tiene las siguientes marcas bajo su control.
 ![](/images/ABInbev.jpg)
 ABInbev
 
-### Estrategias de relocalización.
+### Estrategias de relocalización y exportación indirecta de recursos hidricos.
 
 La obtención de este recurso estratégico ha implicado que las empresas dedicadas a la producción de cerveza emprendan acciones para asegurar su abastecimiento.  
 
@@ -183,7 +133,17 @@ ggplotly(px)
 
 Entre 2003 y 2021  el mercado de destino para exportación de la cerveza producida por los corporativos de capital Bélga y Holandés en México  incluye 165 países. No obstante, sólo un destino concentra el **86% del total exportado**: Estados Unidos.[@torres_siavi_2022]. 
 
-De forma paralela al crecimiento de las exportaciones de cerveza en México, el mercado local constituye es un rasgo que incentiva la atracción de los corporativos internacionales que dominan la industria, ya que 6 de cada 10 cervezas[@INEGI] que se producen en México en actualmente, se dirigen al consumo interno.
+La evidencia empírica muestra que la trayectoria de exportación de cerveza de México, se reconfiguró se ha transformado a partir de los esquemas de liberalización del comercio internacional, en el caso de Mexico, la participación en el mercado muendial tiene u claro punto de inflexión a partir de 1995.
+
+De forma paralela al crecimiento de las exportaciones de cerveza en México, el mercado local constituye es un rasgo que incentiva la atracción de los corporativos internacionales que dominan la industria, ya que 6 de cada 10 cervezas[@INEGI] que se producen en México actualmente, se dirigen al consumo interno.
+
+
+Desde el punto de vista de los recursos hídicos a escala local, esta configuración, implica al menos dos impactos:  
+
+-  Exportación neta de recursos hídricos
+-  Intensificación de la compentencia entre usuarios del recurso.  
+
+
 
 
 
@@ -324,26 +284,62 @@ ggplotly(plt2)
 
 
 
-En otras palabras, desde el punto de vista económico, la producción de cerveza, en el caso de México, tiene una cadena de producción integrada en el sector agro-industrial, un mercado altamente concentrado (duopolio de capital extranjero) asociado a una  **estrategia de relocalización** de la producción de las principales corporaciónes a esccala global en la industria. 
-
-En donde un páis: **Estados Unidos**, es el mercado principal que recibe los recursos hidricos asociados a la cerveza exportada. 
+En otras palabras, desde el punto de vista económico, la producción de cerveza, en el caso de México, tiene una cadena de producción integrada en el sector agro-industrial, un mercado altamente concentrado (duopolio de capital extranjero) asociado a una  **estrategia de relocalización** de la producción de las principales corporaciónes a escala global en la industria en donde un páis: **Estados Unidos**, es el mercado principal que recibe los recursos hídricos asociados a la cerveza exportada. 
 
 
+## Heineken Meoqui
 
 Atender ese mercado es factible gracias a la operación de plantas recientemente instaladas en territorio nacional como **HEINEKEN MEOQUI.** que abre operaciones en el 27 de febrero de **2018**, en una región ubicada a una distancia de 314 km.  de la frontera con **Estados Unidos** (via Ojinaga o 454 km. via El Paso, Tx.) y donde la disputa por los recursos hídricos ha sucitado ya severos conflictos entre los diferentes grupos de usuarios. 
 Tal como se documenta por medios internacionales, entre ellos el New york Times de fecha 11 octubre de 2020.
 [TNYT](https://www.nytimes.com/es/2020/10/14/espanol/america-latina/chihuahua-mexico-pago-agua.html).
 
-La evidencia empírica muestra que la trayectoria de exportación de cerveza de México, se ha transformado a partir del cambio en los esquemas de comercio internacional. 
-El primer hito en este sentido se presento en.
+
+Considerando que la planta  **Heineken de Meoquí** produce  **600 millones de litros** anualmente[@eluyde_heineken_2018], y que el proceso productivo de cerveza  Heineken requiere en promedio de 3.5 lt. agua por litro de cerveza  [@heineken_every_2019], 
+el proceso implica una demanda directa de recursos hídricos en la región de **2,100 millones de litros** anuales.^[ Considerando las cifras oficiales de **Heineken**, sobre volumen de producción anual así como el requerimiento de agua, declarado. Requerimiento de agua de 3.5 hl/hl,  una producción anual de 600 millones de litros[@heineken_every_2019] y el registro de volumen concesionado  en REPDA por parte de la JMAS. que es de 4,462 millones de litros]  
+
+Este volumen representa el **44%** del volumen concesionado al principal usuario de agua subterránea en el municipio: la **Junta Municipal de Agua y Saneamiento de Meoqui**  organismo que destina el recurso para abastecer a la población con un uso clasificado como **público urbano**[@REPDA]^[
+Desde el contexto local, esta demanda de agua representa **14.3** veces la demanda de importantes usuarios de tipo industrial en el Municipio, como la embotelladora de bebidas, refrescos unión. S.A.]
+
+Desde la perspectiva de impacto amabiental, la planta genera una huella hídrica que alcanza los **180 000 000 000** litros anuales. 
+ 
+
+```{r,include = FALSE}
 
 
-Desde el punto de vista de los recursos hídicos a escala local, esta configuración, implica al menos dos impactos:  
+#4,762,000,000  LITROS
+   #2100000000/4762000000 
 
--  Exportación neta de recursos hídricos
--  Intensificación de la compentencia entre usuarios del recurso.  
+  #2100000000/145924000
+#145924000/4762000000
 
-## Tipología del Mercado de la cerveza en México.
+
+
+repda<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/repda_meoqui.csv")
+
+volumen<-group_by(repda, Uso)%>%
+summarize(Volumen=sum(Volumen.de.extracción.de.aguas.nacionales..m3.a.o.))%>%
+mutate(porc=Volumen/sum(Volumen), p=round(porc,3)*100, Uso=as.factor(Uso) )
+
+uso<-count(repda, Uso)
+
+uso<-group_by(repda, Uso)%>%
+  count()
+
+industrial<-filter(repda, Uso=="INDUSTRIAL")
+
+glimpse(repda)
+names(repda)
+
+str(volumen)
+
+```
+
+```{r,include = FALSE}
+ggplot(volumen, aes(x=reorder(Uso,p),p ))+
+  geom_col()
+```
+
+
 
 
 ## Caracterización del acuífero 
