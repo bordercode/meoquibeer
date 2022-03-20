@@ -30,7 +30,7 @@ library(stringr)
 
 La cerveza es la bebida alcohólica de mayor consumo en el mundo.  
 
-Se estima que su producción involucra una cadena de valor cuya integración esta distribuida a lo largo  **168 actividades económicas**[@INEGI].  
+Se estima que su producción en México involucra una cadena de valor cuya integración está distribuida a lo largo  **168 actividades económicas**[@INEGI].  
 
 
 El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto y el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable, ya que la producción de un litro de cerveza implica una huella hídrica de **300** litros de agua.[@mekonnen_green_2011]
@@ -112,13 +112,19 @@ ggplotly(plt2)
 **FUENTE:** [CONAGUA](http://sina.conagua.gob.mx/sina/tema.php?tema=tarifas&n=nacional). 2020. Subdirección General de Agua Potable, Drenaje y Saneamiento. Gerencia de Fortalecimiento de Organismos Operadores
 
 
-(Unicamente  la Cebeda necesaria para producir un litro de cerveza, tiene una huella hidrica de **298** litros^[A diferencia del **impacto ambiental** por el uso de recursos hídricos en la producción de la **cerveza**, el impacto de la huella hidrica de la producción de insumos como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la planta productora, pero recae en la región agricola que produce la Cebada, (en el caso de México, GUanajuato es la principal entidad  productora de Cebada generando 1 de cada 3 toneladas que se producen en México o 36.8 % de la producción total nacional, [@INEGI])]. 
-
-Acorde con el Instituto Mexicano de Tecnología del Agua, la producción de Cebada tiene una huella hídrica de  49 metros cubicos/ ton.[@hh]  Por lo que al considerar la producción de Cebada en grano reportada por el Sistema de Información Agroalimentaria de Consulta en México para 2020[@siacon], (864,293.27 ton.), es posible estimar que se tuvo una HH de  42.3 millones de metros cúbicos de agua (subterránea y superficial)) [@mekonnen_green_2011]. 
 
 
-De manera complementaria **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza.
 
+
+De manera complementaria **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
+
+Si bien, estudios especializados sobre Huella hídrica (HH), estiman que  para producir un litro de cervezala, la  **Cebeda**, genera una HH de **298** litros^[A diferencia del **impacto ambiental**[@@mekonnen_green_2011], este cifra no es un estimado aplicable a escala goblal, ya que existe una gran variabilidad asociada a las condiciones productivas regionales. 
+
+Sin ambargo, es importante notar que el impacto de la huella hidrica de la producción de insumos  como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la planta productora, pero recae en la región agrícola que produce la Cebada, (en el caso de México, Guanajuato es la principal entidad  productora de Cebada generando 1 de cada 3 toneladas que se producen en México o 36.8 % de la producción total nacional, [@INEGI])]. 
+
+Acorde con el Instituto Mexicano de Tecnología del Agua, la producción de Cebada tiene una huella hídrica de  49 metros cubicos/ ton.[@hh]  
+
+Por lo que al considerar la producción de Cebada en grano reportada por el Sistema de Información Agroalimentaria de Consulta en México para 2020, que fue de 864,293.27 ton.)[@siacon], se observa una HH de  42.3 millones de metros cúbicos de agua (subterránea y superficial)) [@mekonnen_green_2011]. 
 
 
 ![](/images/cebada.png)
