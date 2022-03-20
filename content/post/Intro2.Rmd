@@ -26,14 +26,16 @@ library(stringr)
 
 
 
-### Por que es importante analizar el uso de agua en la producción de cerveza? 
+### ¿Por qué es importante analizar el uso de agua en la producción de cerveza en México? 
 
 La cerveza es la bebida alcohólica de mayor consumo en el mundo.  
 
 Se estima que su producción en México involucra una cadena de valor cuya integración está distribuida a lo largo  **168 actividades económicas**[@INEGI].  
 
 
-El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto) y se estima que la producción de un litro de cerveza implica una huella hídrica de **300** litros,[@mekonnen_green_2011] por lo que, el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable. 
+El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto). Una forma comumenete aceptada para medir la intensidad en el uso de los recursos hídricos de un producto,  es a través del concepto de la huella hídirca (HH).
+
+Se estima que la producción de un litro de cerveza implica una huella hídrica de **300** litros,[@mekonnen_green_2011] por lo que, el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable. 
 
 
 Al respecto, la produción de **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
