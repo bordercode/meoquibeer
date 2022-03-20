@@ -33,10 +33,11 @@ La cerveza es la bebida alcohólica de mayor consumo en el mundo.
 Se estima que su producción en México involucra una cadena de valor cuya integración está distribuida a lo largo  **168 actividades económicas**[@INEGI].  
 
 
-El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto y el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable, ya que la producción de un litro de cerveza implica una huella hídrica de **300** litros de agua.[@mekonnen_green_2011]
+El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto),  la producción de un litro de cerveza implica una huella hídrica de **300** litros de gua.[@mekonnen_green_2011] y el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable. 
 
-No obstante, en México el costo de este insumo representa sólo el **0.8%** del costo total de los insumos necesarios para su producción[@INEGI]. 
+En contraste con el costo del agua en los paises a donde se exporta la cerveza,  en México, el costo de este insumo representa sólo el **0.8%** del costo total de los insumos necesarios para su producción[@INEGI]. 
 
+La grafica 1 muestra el contraste de los costos de agua para uso dómestico,  (proxi de la tarifas para uso industrial) en un conjunto de 15 ciudades en el mundo.
 
 ```{r, include=FALSE}
 
