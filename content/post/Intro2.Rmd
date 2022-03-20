@@ -35,91 +35,13 @@ Se estima que su producción en México involucra una cadena de valor cuya integ
 
 El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto),  la producción de un litro de cerveza implica una huella hídrica de **300** litros de gua.[@mekonnen_green_2011] y el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable. 
 
-En contraste con el costo del agua en los paises a donde se exporta la cerveza,  en México, el costo de este insumo representa sólo el **0.8%** del costo total de los insumos necesarios para su producción[@INEGI]. 
 
-La grafica 1 muestra el contraste de los costos de agua para uso dómestico,  (proxi de la tarifas para uso industrial) en un conjunto de 15 ciudades en el mundo.
-
-```{r, include=FALSE}
-
-p<-read.csv("prices.csv")%>%
-  mutate(ciudad=as.factor(ciudad), usd=Total/20.3627, cdmx=as.factor(ifelse(ciudad=="Ciudad de Mexico (Mexico)",1,ifelse(ciudad=="Copenhage (Dinarnarca)",2,0))))
-
-```
-
-
-**Tarifas domésticas de agua potable, saneamiento e impuestos asociados al servicio en algunas ciudades del mundo, 2015.**
-
-```{r, fig.height = 6, fig.width=8}
-
-plotp<-ggplot(p, aes(x=reorder(ciudad,usd),usd, fill=cdmx ))+
-  geom_col()+
-  coord_flip()+
-  theme_light()+
-  theme(legend.position="none")+ 
-  labs(y = "Tarifas en USD/m³, para un consumo de 15 m³/mes")+
-  labs(x = "Ciudad")+
-  scale_fill_manual(values=c("dimgray",
-                                "deepskyblue4", "red"))
-ggplotly(plotp)
-```
-*Nota: (tarifas en USD/m³, para un consumo de 15 m³/mes)*
-Fuente: GWI. 2015. Global Water Tariff Survey. Published by Global Water Intelligence. [CONAGUA](http://sina.conagua.gob.mx/sina/tema.php?tema=tarifas&n=mundial).
-
-
-```{r, include=FALSE}
-
-tarifas<-read.csv("t.csv")%>%
-  mutate(i=as.numeric(i)/20.3627,d=d/20.3627,c=c/20.3627)%>%
-  select(-id)
-
- t<- pivot_longer(tarifas, d:i)%>%
-   rename(tipo=name  , tarifa=value)
-
-```
-
-**Tarifas de agua para uso industrial. Principales 40 ciudades según costo, 2020**
-
-```{r, fig.height = 6, fig.width=8}
-
-indus<-mutate(t,del=as.factor(ifelse(ciudad=="Delicias",1,0)), tarifa=tarifa/20.3627)%>%
-filter(tipo=="i")
-  
-
-indus <- indus %>%
-  arrange(tarifa) %>%
-  mutate(ciudad=factor(ciudad,ciudad))%>%
-  filter(!is.na(tarifa)) 
-
-plt2<-ggplot(indus, aes(ciudad, y=tarifa)) +
-geom_segment(
-    aes(x=ciudad, xend=ciudad, y=0, yend=tarifa), 
-    color=ifelse(indus$ciudad %in% c("Delicias", "Chihuahua"), "deepskyblue4", "grey"), 
-    size=ifelse(indus$ciudad %in% c("Delicias","Chihuahua"), 1.3, 0.7)
-  ) +
-  geom_point(color=ifelse(indus$ciudad %in% c("Delicias","Chihuahua"), "red", "grey"), 
-    size=ifelse(indus$ciudad %in% c("Delicias","Chihuahua"), 3, 2)
-  ) +
-  coord_flip() +
-  theme(legend.position="none") +
-  xlab("") +
-  ylab("Tarifa (USD/m3)") +
-  theme_classic()+
-  labs(caption="Nota para un consumo de 30m3/mes")
-
-ggplotly(plt2)
-
-```
-*Nota: Para un consumo de 30m^3/mes.*
-**FUENTE:** [CONAGUA](http://sina.conagua.gob.mx/sina/tema.php?tema=tarifas&n=nacional). 2020. Subdirección General de Agua Potable, Drenaje y Saneamiento. Gerencia de Fortalecimiento de Organismos Operadores
-
-
-
-De manera complementaria la produción de **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
+Al respecto, la produción de **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
 
 
 Acorde con el Instituto Mexicano de Tecnología del Agua, la producción de Cebada tiene una huella hídrica de  49 metros cubicos/ ton.[@hh]  
 
-Por lo que al considerar la producción de Cebada en grano reportada por el Sistema de Información Agroalimentaria de Consulta en México para 2020, que fue de 864,293.27 ton.)[@siacon], se observa una HH de  42.3 millones de metros cúbicos de agua (subterránea y superficial)) [@mekonnen_green_2011]. 
+Por lo que al considerar la producción de Cebada en grano reportada por el Sistema de Información Agroalimentaria de Consulta en México para 2020, que fue de 864,293.27 ton.[@siacon], se observa una HH de  42.3 millones de metros cúbicos de agua (subterránea y superficial). 
 
 
 ![](/images/cebada.png)
@@ -128,7 +50,7 @@ Por lo que al considerar la producción de Cebada en grano reportada por el Sist
 
 
 
-Estudios especializados sobre Huella hídrica (HH), estiman que  para producir un litro de cerveza, la  **Cebeda**, genera una HH de **298** litros[@mekonnen_green_2011]^[ si bien, debido a que existe una gran variabilidad asociada a las condiciones productivas regionales  los estimados de HH ha sido objeto de controversía. En todo caso la metodología para estimación de HH debe diseñarse considerando las variables específicas de la región de estudio. Adicionalmente, es importante notar que el impacto de la huella hidrica de la producción de insumos  como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la compañia productora de cerveza, pero recae en la región agrícola que produce la Cebada, (en el caso de México, Guanajuato es la principal entidad  productora de Cebada generando 1 de cada 3 toneladas que se producen en México o 36.8 % de la producción total nacional, [@INEGI])]. 
+Estudios especializados sobre Huella hídrica (HH), estiman que  para producir un litro de cerveza, la  **Cebeda** necesaria, genera una HH de **298** litros[@mekonnen_green_2011]^[ si bien, debido a que existe una gran variabilidad asociada a las condiciones productivas regionales  los estimados de HH ha sido objeto de controversía. En todo caso la metodología para estimación de HH debe diseñarse considerando las variables específicas de la región de estudio. Adicionalmente, es importante notar que el impacto de la huella hidrica de la producción de insumos  como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la compañia productora de cerveza, pero recae en la región agrícola que produce la Cebada, (en el caso de México, Guanajuato es la principal entidad  productora de Cebada generando 1 de cada 3 toneladas que se producen en México o 36.8 % de la producción total nacional, [@INEGI])]. 
 
 
 
@@ -186,16 +108,12 @@ ggplot(volumen, aes(x=reorder(Uso,p),p ))+
   
 
 
-[^ Considerando las cifras oficiales de **Heineken**, sobre volumen de producción anual así como el requerimiento de agua, declarado. Requerimiento de agua de 3.5 hl/hl,  una producción anual de 600 millone sde litros[@heineken_every_2019] y el registro de volumen concesionado  en REPDA por parte de la JMAS. que es de 4,462 millones de litros], 
+[^ Considerando las cifras oficiales de **Heineken**, sobre volumen de producción anual así como el requerimiento de agua, declarado. Requerimiento de agua de 3.5 hl/hl,  una producción anual de 600 millones de litros[@heineken_every_2019] y el registro de volumen concesionado  en REPDA por parte de la JMAS. que es de 4,462 millones de litros], 
 
 
 
 
 
-
-(presentar un ejemplo de cotraste para dimensionar el consumo).
-
-[@wwf_water_2010]
 
 ### Estructura de Mercado
 
@@ -224,7 +142,7 @@ ABInbev
 La obtención de este recurso estratégico ha implicado que las empresas dedicadas a la producción de cerveza emprendan acciones para asegurar su abastecimiento.  
 
 
-Acciones emprendidas por las empresas más importantes de la industria a escala global incluyen la **relocalización**, lo cual see ha conseguido, entro otros elementos, mediante fusiones con empresas productoras en otra regiones del mundo  donde se han identificado condiciones favorables de acceso a los insumos para su producción. 
+Acciones emprendidas por las empresas más importantes de la industria a escala global incluyen la **relocalización**, lo cual se ha conseguido, entro otros elementos, mediante fusiones con empresas productoras en otra regiones del mundo  donde se han identificado condiciones favorables de acceso a los insumos para su producción. 
 
 
 Esta tendencia de relocalización de la **industria cervecera global** y las condiciones de ubicación estratégica de **México**, han contribuido a que nuestro país halla transitado del lugar **20** dentro del ranking de exportadores de cerveza en 1965 al **primer sitio**  en 2022. México se ubica hoy en día, como  el principal exportador de este producto a escala global. 
@@ -272,7 +190,7 @@ ggplotly(px)
 
 Entre 2003 y 2021  el mercado de destino para exportación de la cerveza producida por los corporativos de capital Bélga y Holandés en México  incluye 165 países. No obstante, sólo un destino concentra el **86% del total exportado**: Estados Unidos.[@torres_siavi_2022]. 
 
-A pesar del crecimiento de las exportaciones de cerveza, el mercado local consituye un incentivo para la atracción de los grandes corporativos internacionales que dominana la industria, ya que 6 de cada 10 cervezas[@INEGI] que se producen en México, se dirigen al consumo interno.
+De forma paralela al crecimiento de las exportaciones de cerveza en México, el mercado local constituye es un rasgo que incentiva la atracción de los corporativos internacionales que dominan la industria, ya que 6 de cada 10 cervezas[@INEGI] que se producen en México en actualmente, se dirigen al consumo interno.
 
 
 
@@ -333,7 +251,89 @@ ggplotly(dx)
 ```
 *Fuente: Sistema de Información Comercial Via Internet [SIAVI](http://www.economia-snci.gob.mx/). 2021*
 
-En otras palabras, desde el punto de vista económico, la producción de cerveza, en el caso de México, tiene una cadena de producción integrada en el sector agro-industrial, un mercado altamente concentrado (duopolio de capital extranjero) asociado a una  **estrategia de relocalización** de la producción de las principales corporaciónes a esccala global en la industria. En donde un páis: **Estados Unidos**, es el mercado principal que recibe los recursos hidricos asociados a la cerveza exportada. 
+
+En contraste con el costo del agua en los paises a donde se exporta la cerveza,  en México, el costo de este insumo representa sólo el **0.8%** del costo total de los insumos necesarios para su producción[@INEGI]. 
+
+La gráfica 1 muestra el contraste de los costos de agua para uso dómestico,  (proxi de la tarifas para uso industrial) en un conjunto de 15 ciudades en el mundo.
+
+```{r, include=FALSE}
+
+p<-read.csv("prices.csv")%>%
+  mutate(ciudad=as.factor(ciudad), usd=Total/20.3627, cdmx=as.factor(ifelse(ciudad=="Ciudad de Mexico (Mexico)",1,ifelse(ciudad=="Copenhage (Dinarnarca)",2,0))))
+
+```
+
+
+**Tarifas domésticas de agua potable, saneamiento e impuestos asociados al servicio en algunas ciudades del mundo, 2015.**
+
+```{r, fig.height = 6, fig.width=8}
+
+plotp<-ggplot(p, aes(x=reorder(ciudad,usd),usd, fill=cdmx ))+
+  geom_col()+
+  coord_flip()+
+  theme_light()+
+  theme(legend.position="none")+ 
+  labs(y = "Tarifas en USD/m³, para un consumo de 15 m³/mes")+
+  labs(x = "Ciudad")+
+  scale_fill_manual(values=c("dimgray",
+                                "deepskyblue4", "red"))
+ggplotly(plotp)
+```
+*Nota: (tarifas en USD/m³, para un consumo de 15 m³/mes)*
+Fuente: GWI. 2015. Global Water Tariff Survey. Published by Global Water Intelligence. [CONAGUA](http://sina.conagua.gob.mx/sina/tema.php?tema=tarifas&n=mundial).
+
+
+```{r, include=FALSE}
+
+tarifas<-read.csv("t.csv")%>%
+  mutate(i=as.numeric(i)/20.3627,d=d/20.3627,c=c/20.3627)%>%
+  select(-id)
+
+ t<- pivot_longer(tarifas, d:i)%>%
+   rename(tipo=name  , tarifa=value)
+
+```
+
+**Tarifas de agua para uso industrial En México para 40 ciudades  según costo, 2020**
+
+```{r, fig.height = 6, fig.width=8}
+
+indus<-mutate(t,del=as.factor(ifelse(ciudad=="Delicias",1,0)), tarifa=tarifa/20.3627)%>%
+filter(tipo=="i")
+  
+
+indus <- indus %>%
+  arrange(tarifa) %>%
+  mutate(ciudad=factor(ciudad,ciudad))%>%
+  filter(!is.na(tarifa)) 
+
+plt2<-ggplot(indus, aes(ciudad, y=tarifa)) +
+geom_segment(
+    aes(x=ciudad, xend=ciudad, y=0, yend=tarifa), 
+    color=ifelse(indus$ciudad %in% c("Delicias", "Chihuahua"), "deepskyblue4", "grey"), 
+    size=ifelse(indus$ciudad %in% c("Delicias","Chihuahua"), 1.3, 0.7)
+  ) +
+  geom_point(color=ifelse(indus$ciudad %in% c("Delicias","Chihuahua"), "red", "grey"), 
+    size=ifelse(indus$ciudad %in% c("Delicias","Chihuahua"), 3, 2)
+  ) +
+  coord_flip() +
+  theme(legend.position="none") +
+  xlab("") +
+  ylab("Tarifa (USD/m3)") +
+  theme_classic()+
+  labs(caption="Nota para un consumo de 30m3/mes")
+
+ggplotly(plt2)
+
+```
+*Nota: Para un consumo de 30m^3/mes.*
+**FUENTE:** [CONAGUA](http://sina.conagua.gob.mx/sina/tema.php?tema=tarifas&n=nacional). 2020. Subdirección General de Agua Potable, Drenaje y Saneamiento. Gerencia de Fortalecimiento de Organismos Operadores
+
+
+
+En otras palabras, desde el punto de vista económico, la producción de cerveza, en el caso de México, tiene una cadena de producción integrada en el sector agro-industrial, un mercado altamente concentrado (duopolio de capital extranjero) asociado a una  **estrategia de relocalización** de la producción de las principales corporaciónes a esccala global en la industria. 
+
+En donde un páis: **Estados Unidos**, es el mercado principal que recibe los recursos hidricos asociados a la cerveza exportada. 
 
 
 
