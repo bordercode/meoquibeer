@@ -26,14 +26,14 @@ library(stringr)
 
 
 
-### El agua en la prodcción de cerveza. 
+### Por que es importante analizar el uso de agua en la producción de cerveza? 
 
 La cerveza es la bebida alcohólica de mayor consumo en el mundo.  
 
 Se estima que su producción en México involucra una cadena de valor cuya integración está distribuida a lo largo  **168 actividades económicas**[@INEGI].  
 
 
-El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto) y se estima que la producción de un litro de cerveza implica una huella hídrica de **300** litros de gua.[@mekonnen_green_2011] por lo que, el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable. 
+El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto) y se estima que la producción de un litro de cerveza implica una huella hídrica de **300** litros,[@mekonnen_green_2011] por lo que, el impacto de la cadena de valor desde el punto de vista de los recursos hídricos es considerable. 
 
 
 Al respecto, la produción de **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
@@ -58,7 +58,7 @@ Estudios especializados sobre Huella hídrica (HH), estiman que  para producir u
 
 
 
-### Considetacones sobre estructura de Mercado en México.
+### Consideraciones sobre la estructura de Mercado de la cerveza en México.
 
 La industria cervecera mundial se integra bajo una estructura **oligopólica.** 
 
@@ -133,9 +133,9 @@ ggplotly(px)
 
 Entre 2003 y 2021  el mercado de destino para exportación de la cerveza producida por los corporativos de capital Bélga y Holandés en México  incluye 165 países. No obstante, sólo un destino concentra el **86% del total exportado**: Estados Unidos.[@torres_siavi_2022]. 
 
-La evidencia empírica muestra que la trayectoria de exportación de cerveza de México, se reconfiguró se ha transformado a partir de los esquemas de liberalización del comercio internacional, en el caso de Mexico, la participación en el mercado muendial tiene u claro punto de inflexión a partir de 1995.
+La evidencia empírica muestra que la trayectoria de exportación de cerveza de México, se reconfiguró se ha transformado a partir de los esquemas de liberalización del comercio internacional, en el caso de Mexico, la participación en el mercado mundial tiene un claro punto de inflexión a partir de 1995 cuando supera por primera vez a exportadores líderes tradicionales como Holanda y  ya para **1999**, México se posiciona por primera vez como el **líder mundial exportador**.
 
-De forma paralela al crecimiento de las exportaciones de cerveza en México, el mercado local constituye es un rasgo que incentiva la atracción de los corporativos internacionales que dominan la industria, ya que 6 de cada 10 cervezas[@INEGI] que se producen en México actualmente, se dirigen al consumo interno.
+De forma paralela, al crecimiento de las exportaciones de cerveza en México, el mercado local constituye es un rasgo que incentiva la atracción de los corporativos internacionales que dominan la industria, ya que 6 de cada 10 cervezas[@INEGI] que se producen en México actualmente, se dirigen al consumo interno.
 
 
 Desde el punto de vista de los recursos hídicos a escala local, esta configuración, implica al menos dos impactos:  
