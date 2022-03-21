@@ -52,54 +52,14 @@ ABInbev
 La obtención de este recurso estratégico ha implicado que las empresas dedicadas a la producción de cerveza emprendan acciones para asegurar su abastecimiento.  
 
 
-Acciones emprendidas por las empresas más importantes de la industria a escala global incluyen la **relocalización**, lo cual se ha conseguido, entro otros elementos, mediante fusiones con empresas productoras en otra regiones del mundo  donde se han identificado condiciones favorables de acceso a los insumos para su producción. 
+Acciones emprendidas por las empresas más importantes de la industria a escala global incluyen la **relocalización**, lo cual se ha conseguido, entre otros elementos, mediante fusiones con empresas productoras en otras regiones del mundo,  donde se han identificado condiciones favorables de acceso a los insumos para su producción. 
 
 
-Esta tendencia de relocalización de la **industria cervecera global** y las condiciones de ubicación estratégica de **México**, han contribuido a que nuestro país halla transitado del lugar **20** dentro del ranking de exportadores de cerveza en 1965 al **primer sitio**  en 2022. México se ubica hoy en día, como  el principal exportador de este producto a escala global.  
+Esta tendencia de relocalización de la **industria cervecera global** y las condiciones de ubicación estratégica de **México**, han contribuido a que nuestro país haya transitado del lugar **20** dentro del ranking de exportadores de cerveza en 1965 al **primer sitio**  en 2022. México se ubica hoy en día, como  el principal exportador de este producto a escala global.  
 
 + ¿Qué papel ha tenido la disponibilidad y el costo de recursos hidricos en México para este posicionamiento ? 
 
 + ¿Qué implicaciones tiene esta configuración respecto al uso de los recursos hidricos a escala local?
-
-```{r}
-x<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/x_country2019.csv")
-
-# cifras de exportacion en litros 4465290000/1000000  x
-
-#  Porporcion de X respecto al total producido en litros. 4465/12450 =35.8% Una de cada tres cervezas producidas se exporta.
-
-
-
-top20<-x%>%head(21)%>%filter(País!="European Union")%>%
-  select(País, Trade.Value.1000USD)%>%
-  rename(Valor=Trade.Value.1000USD)%>%
-  mutate(tres=as.factor(ifelse(País=="Mexico",1 ,ifelse(País=="Netherlands",2,(ifelse(País=="Belgium",3 ,0))))))
-
-average<-summarize(top20,promedio=mean(Valor))
-```
-**Principales paises exportadores de Cerveza según Valor  2019**
-```{r, fig.height = 6, fig.width=10}
-library(scales)
-
-px<-ggplot(top20, aes(x=reorder(País,Valor), Valor, fill=tres))+
-  geom_col()+
-  coord_flip()+
-  theme_light()+
-  theme(legend.position="none")+ 
-  labs(y = "Valor de las exportaciones en Millones USD (precios constantes)")+
-  labs(x = "Páís exportador")+
-  scale_fill_manual(values=c("dimgray",
-                                "deepskyblue4","orangered", "orange"))+
-  scale_y_continuous(labels = label_number(suffix = " M", scale = 1e-3))+
-  geom_hline(yintercept =719012.2, linetype="dashed",color = "red2", size=.2)+
-  annotate(geom = "text", x = 5.6, y = 1000000, label = "Valor promedio de Xports", hjust = "left")
-
-ggplotly(px)
-
-```
-
-
-*Fuente*: Elaboración propia con datos de  [Banco Mundial 2019](https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2019/tradeflow/Exports/partner/WLD/product/220300)
 
 
 Entre 2003 y 2021  el mercado destino para exportación de la cerveza producida por los corporativos de capital Bélga y Holandés en México, incluye 165 países. No obstante, sólo un destino concentra el **86% del total exportado**: Estados Unidos.[@torres_siavi_2022]. 
@@ -166,6 +126,46 @@ ggplotly(dx)
 *Fuente: Sistema de Información Comercial Via Internet [SIAVI](http://www.economia-snci.gob.mx/). 2021*
 
 
+
+```{r}
+x<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/x_country2019.csv")
+
+# cifras de exportacion en litros 4465290000/1000000  x
+
+#  Porporcion de X respecto al total producido en litros. 4465/12450 =35.8% Una de cada tres cervezas producidas se exporta.
+
+
+
+top20<-x%>%head(21)%>%filter(País!="European Union")%>%
+  select(País, Trade.Value.1000USD)%>%
+  rename(Valor=Trade.Value.1000USD)%>%
+  mutate(tres=as.factor(ifelse(País=="Mexico",1 ,ifelse(País=="Netherlands",2,(ifelse(País=="Belgium",3 ,0))))))
+
+average<-summarize(top20,promedio=mean(Valor))
+```
+**Principales paises exportadores de Cerveza según Valor  2019**
+```{r, fig.height = 6, fig.width=10}
+library(scales)
+
+px<-ggplot(top20, aes(x=reorder(País,Valor), Valor, fill=tres))+
+  geom_col()+
+  coord_flip()+
+  theme_light()+
+  theme(legend.position="none")+ 
+  labs(y = "Valor de las exportaciones en Millones USD (precios constantes)")+
+  labs(x = "Páís exportador")+
+  scale_fill_manual(values=c("dimgray",
+                                "deepskyblue4","orangered", "orange"))+
+  scale_y_continuous(labels = label_number(suffix = " M", scale = 1e-3))+
+  geom_hline(yintercept =719012.2, linetype="dashed",color = "red2", size=.2)+
+  annotate(geom = "text", x = 5.6, y = 1000000, label = "Valor promedio de Xports", hjust = "left")
+
+ggplotly(px)
+
+```
+
+
+*Fuente*: Elaboración propia con datos de  [Banco Mundial 2019](https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2019/tradeflow/Exports/partner/WLD/product/220300)
 
 De forma paralela, al crecimiento de las exportaciones de cerveza en México, el mercado local constituye es un rasgo que incentiva la atracción de los corporativos internacionales que dominan la industria, ya que 6 de cada 10 cervezas[@INEGI] que se producen en México actualmente, se dirigen al consumo interno.
 
