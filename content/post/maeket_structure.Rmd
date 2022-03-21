@@ -66,7 +66,26 @@ Entre 2003 y 2021  el mercado destino para exportación de la cerveza producida 
 
 La evidencia empírica muestra que la trayectoria de exportación de cerveza de México, se reconfiguró y se ha transformado a partir de los esquemas de liberalización del comercio internacional, en el caso de Mexico, la participación en el mercado mundial tiene un claro punto de inflexión a partir de 1995 cuando supera por primera vez a exportadores líderes tradicionales como Holanda y  ya para **1999**, México se posiciona por primera vez como el **líder mundial exportador**.
 
+
+```{r}
+x<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/x_country2019.csv")
+
+# cifras de exportacion en litros 4465290000/1000000  x
+
+#  Porporcion de X respecto al total producido en litros. 4465/12450 =35.8% Una de cada tres cervezas producidas se exporta.
+
+
+
+top20<-x%>%head(21)%>%filter(País!="European Union")%>%
+  select(País, Trade.Value.1000USD)%>%
+  rename(Valor=Trade.Value.1000USD)%>%
+  mutate(tres=as.factor(ifelse(País=="Mexico",1 ,ifelse(País=="Netherlands",2,(ifelse(País=="Belgium",3 ,0))))))
+
+average<-summarize(top20,promedio=mean(Valor))
+```
+
 **Principales paises exportadores de Cerveza según Valor  2019**
+
 ```{r, fig.height = 6, fig.width=10}
 library(scales)
 
@@ -150,22 +169,6 @@ ggplotly(dx)
 
 
 
-```{r}
-x<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/x_country2019.csv")
-
-# cifras de exportacion en litros 4465290000/1000000  x
-
-#  Porporcion de X respecto al total producido en litros. 4465/12450 =35.8% Una de cada tres cervezas producidas se exporta.
-
-
-
-top20<-x%>%head(21)%>%filter(País!="European Union")%>%
-  select(País, Trade.Value.1000USD)%>%
-  rename(Valor=Trade.Value.1000USD)%>%
-  mutate(tres=as.factor(ifelse(País=="Mexico",1 ,ifelse(País=="Netherlands",2,(ifelse(País=="Belgium",3 ,0))))))
-
-average<-summarize(top20,promedio=mean(Valor))
-```
 
 De forma paralela, al crecimiento de las exportaciones de cerveza en México, el mercado local constituye es un rasgo que incentiva la atracción de los corporativos internacionales que dominan la industria, ya que 6 de cada 10 cervezas[@INEGI] que se producen en México actualmente, se dirigen al consumo interno.
 
