@@ -38,7 +38,7 @@ El insumo principal  para su elaboración es el agua, (el agua representa el 95%
 Se estima que la producción de un litro de cerveza en promedio en el mundo implica una huella hídrica de **297** litros,[@mekonnen_green_2011] y la produción de **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
 
 
-Sin embargo, en México el estimado de la HH es de 406 litros, más aún, al considerar el impacto por tipo de agua **(verde, azul y gris)**, vemos que nuestro país tiene una incidencia particularmente severa en el componente azul (agua extraida de los acuíferos) cuyo valor supera en 11.3 veces el estandar global, ya que el estimado de HH es, 181 litros, mientras el estándar mundial es de 16 litros[@mekonnen_green_2011] únicamente, por lo que, el impacto de la cadena de valor desde el punto de vista de los recursos hídricos de este producto en Mexico, es especialmente relevante. 
+Sin embargo, en México el estimado de la HH es de 406 litros, más aún, al considerar el impacto por tipo de agua **(verde, azul y gris)**, vemos que nuestro país tiene una incidencia particularmente severa en el componente azul (agua extraída de los acuíferos) cuyo valor supera en 11.3 veces el estándar global, ya que el estimado de HH es, 181 litros, mientras el estándar mundial es de 16 litros[@mekonnen_green_2011] únicamente, por lo que, el impacto de la cadena de valor desde el punto de vista de los recursos hídricos de este producto en Mexico, es especialmente relevante. 
 
 
 Acorde con el Instituto Mexicano de Tecnología del Agua, la producción de Cebada tiene una huella hídrica de  49 metros cubicos/ ton.[@hh]  
