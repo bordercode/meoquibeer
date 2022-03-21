@@ -27,17 +27,25 @@ a_2003<-filter(a, Año=="2003" & Estado=="Chihuahua"&Parámetro=="Extraccion")%>
   select(Año:Cantidad)
 
 a_2021<-filter(a, Año=="2021" & Estado=="Chihuahua"&Parámetro=="Extraccion")%>%
-  select(Año:Cantidad)
+select(Año:Cantidad)%>%
+mutate(key=paste0("0",Clave.acuifero), vol_rel=Cantidad/sum(Cantidad), vol_rel=round(vol_rel,3)*100)
+
+
+read.csv
+
 
 a_2011<-filter(a, Año=="2011" & Estado=="Chihuahua"&Parámetro=="Extraccion")%>%
-  select(Año:Cantidad)
+select(Año:Cantidad)%>%
+mutate(key=paste0("0",Clave.acuifero))  
+
+
 
 counts<-filter(a, Estado=="Chihuahua"& Parámetro=="Extraccion")%>%
   group_by(Año, Estado)%>%
   count()
 
+glimpse(a_2021)
 
-49*864293.27
 
 
 ```
