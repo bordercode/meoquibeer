@@ -86,7 +86,7 @@ average<-summarize(top20,promedio=mean(Valor))
 
 **Principales paises exportadores de Cerveza según Valor  2019**
 
-```{r, fig.height = 6, fig.width=10}
+```{r, fig.height = 6, fig.width=8}
 library(scales)
 
 px<-ggplot(top20, aes(x=reorder(País,Valor), Valor, fill=tres))+
@@ -150,7 +150,7 @@ df<- cbind(top10, df)%>%select(-pais)
 ##Valor en dólares y Volumen en L
 ```
 **Participación (%) Paises Destino. Cerveza exportada desde México 2021.**
-```{r, fig.height = 6, fig.width=10}
+```{r, fig.height = 6, fig.width=8}
 dx<-ggplot(df, aes(x=reorder(country,p),  p, fill=main ))+
   geom_col()+
   coord_flip()+
