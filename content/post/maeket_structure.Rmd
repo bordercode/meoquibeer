@@ -173,7 +173,7 @@ ggplotly(dx)
 De forma paralela, al crecimiento de las exportaciones de cerveza en México, el mercado local constituye es un rasgo que incentiva la atracción de los corporativos internacionales que dominan la industria, ya que 6 de cada 10 cervezas[@INEGI] que se producen en México actualmente, se dirigen al consumo interno.
 
 
-Desde el punto de vista de los recursos hídicos a escala local, esta configuración, implica al menos dos impactos:  
+Desde el punto de vista de los recursos hídricos a escala local, esta configuración, implica al menos dos impactos:  
 
 -  Exportación neta de recursos hídricos
 
