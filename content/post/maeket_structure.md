@@ -4,7 +4,7 @@ authors:
 date: "2022-03-09"
 excerpt: Beer economics and water
 hero: /images/p2.png
-title: La Estructura de mercado de la cerveza en México.
+title: Estructura de mercado de la cerveza en México.
 ---
 
 
