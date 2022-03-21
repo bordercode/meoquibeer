@@ -66,6 +66,29 @@ Entre 2003 y 2021  el mercado destino para exportación de la cerveza producida 
 
 La evidencia empírica muestra que la trayectoria de exportación de cerveza de México, se reconfiguró y se ha transformado a partir de los esquemas de liberalización del comercio internacional, en el caso de Mexico, la participación en el mercado mundial tiene un claro punto de inflexión a partir de 1995 cuando supera por primera vez a exportadores líderes tradicionales como Holanda y  ya para **1999**, México se posiciona por primera vez como el **líder mundial exportador**.
 
+**Principales paises exportadores de Cerveza según Valor  2019**
+```{r, fig.height = 6, fig.width=10}
+library(scales)
+
+px<-ggplot(top20, aes(x=reorder(País,Valor), Valor, fill=tres))+
+  geom_col()+
+  coord_flip()+
+  theme_light()+
+  theme(legend.position="none")+ 
+  labs(y = "Valor de las exportaciones en Millones USD (precios constantes)")+
+  labs(x = "Páís exportador")+
+  scale_fill_manual(values=c("dimgray",
+                                "deepskyblue4","orangered", "orange"))+
+  scale_y_continuous(labels = label_number(suffix = " M", scale = 1e-3))+
+  geom_hline(yintercept =719012.2, linetype="dashed",color = "red2", size=.2)+
+  annotate(geom = "text", x = 5.6, y = 1000000, label = "Valor promedio de Xports", hjust = "left")
+
+ggplotly(px)
+
+```
+
+
+*Fuente*: Elaboración propia con datos de  [Banco Mundial 2019](https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2019/tradeflow/Exports/partner/WLD/product/220300)
 
 
 ```{r, include=FALSE}
@@ -143,29 +166,6 @@ top20<-x%>%head(21)%>%filter(País!="European Union")%>%
 
 average<-summarize(top20,promedio=mean(Valor))
 ```
-**Principales paises exportadores de Cerveza según Valor  2019**
-```{r, fig.height = 6, fig.width=10}
-library(scales)
-
-px<-ggplot(top20, aes(x=reorder(País,Valor), Valor, fill=tres))+
-  geom_col()+
-  coord_flip()+
-  theme_light()+
-  theme(legend.position="none")+ 
-  labs(y = "Valor de las exportaciones en Millones USD (precios constantes)")+
-  labs(x = "Páís exportador")+
-  scale_fill_manual(values=c("dimgray",
-                                "deepskyblue4","orangered", "orange"))+
-  scale_y_continuous(labels = label_number(suffix = " M", scale = 1e-3))+
-  geom_hline(yintercept =719012.2, linetype="dashed",color = "red2", size=.2)+
-  annotate(geom = "text", x = 5.6, y = 1000000, label = "Valor promedio de Xports", hjust = "left")
-
-ggplotly(px)
-
-```
-
-
-*Fuente*: Elaboración propia con datos de  [Banco Mundial 2019](https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2019/tradeflow/Exports/partner/WLD/product/220300)
 
 De forma paralela, al crecimiento de las exportaciones de cerveza en México, el mercado local constituye es un rasgo que incentiva la atracción de los corporativos internacionales que dominan la industria, ya que 6 de cada 10 cervezas[@INEGI] que se producen en México actualmente, se dirigen al consumo interno.
 
