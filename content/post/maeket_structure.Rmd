@@ -226,7 +226,7 @@ tarifas<-read.csv("t.csv")%>%
 
 ```
 
-**Tarifas de agua para uso industrial En México para 40 ciudades  según costo, 2020**
+**Tarifas de agua para uso industrial en México para 40 ciudades  según costo, 2020**
 
 ```{r, fig.height = 6, fig.width=8}
 
