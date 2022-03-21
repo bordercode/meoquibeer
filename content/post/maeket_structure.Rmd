@@ -102,19 +102,9 @@ ggplotly(px)
 *Fuente*: Elaboración propia con datos de  [Banco Mundial 2019](https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2019/tradeflow/Exports/partner/WLD/product/220300)
 
 
-Entre 2003 y 2021  el mercado destino para exportación de la cerveza producida por los corporativos de capital Bélga y Holandés en México  incluye 165 países. No obstante, sólo un destino concentra el **86% del total exportado**: Estados Unidos.[@torres_siavi_2022]. 
+Entre 2003 y 2021  el mercado destino para exportación de la cerveza producida por los corporativos de capital Bélga y Holandés en México, incluye 165 países. No obstante, sólo un destino concentra el **86% del total exportado**: Estados Unidos.[@torres_siavi_2022]. 
 
 La evidencia empírica muestra que la trayectoria de exportación de cerveza de México, se reconfiguró y se ha transformado a partir de los esquemas de liberalización del comercio internacional, en el caso de Mexico, la participación en el mercado mundial tiene un claro punto de inflexión a partir de 1995 cuando supera por primera vez a exportadores líderes tradicionales como Holanda y  ya para **1999**, México se posiciona por primera vez como el **líder mundial exportador**.
-
-De forma paralela, al crecimiento de las exportaciones de cerveza en México, el mercado local constituye es un rasgo que incentiva la atracción de los corporativos internacionales que dominan la industria, ya que 6 de cada 10 cervezas[@INEGI] que se producen en México actualmente, se dirigen al consumo interno.
-
-
-Desde el punto de vista de los recursos hídicos a escala local, esta configuración, implica al menos dos impactos:  
-
--  Exportación neta de recursos hídricos
--  Intensificación de la compentencia entre usuarios del recurso.  
-
-
 
 
 
@@ -174,6 +164,21 @@ dx<-ggplot(df, aes(x=reorder(country,p),  p, fill=main ))+
 ggplotly(dx)
 ```
 *Fuente: Sistema de Información Comercial Via Internet [SIAVI](http://www.economia-snci.gob.mx/). 2021*
+
+
+
+De forma paralela, al crecimiento de las exportaciones de cerveza en México, el mercado local constituye es un rasgo que incentiva la atracción de los corporativos internacionales que dominan la industria, ya que 6 de cada 10 cervezas[@INEGI] que se producen en México actualmente, se dirigen al consumo interno.
+
+
+Desde el punto de vista de los recursos hídicos a escala local, esta configuración, implica al menos dos impactos:  
+
+-  Exportación neta de recursos hídricos
+
+-  Intensificación de la compentencia entre usuarios del recurso.  
+
+
+
+
 
 
 En contraste con el costo del agua en los paises a donde se exporta la cerveza,  en México, el costo de este insumo representa sólo el **0.8%** del costo total de los insumos necesarios para su producción[@INEGI]. 
