@@ -33,6 +33,6 @@ Fuente:Elaboración propia con datos de: [CONAGUA](http://sina.conagua.gob.mx/si
 ![](/images/irit2021.jpg)
 
 
-#### Déficit de agua subterránea por acuífero
+#### Déficit de agua subterránea por acuífero.
 ![](/images/disp.jpg)
 
