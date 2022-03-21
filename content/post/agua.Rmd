@@ -23,8 +23,16 @@ library(stringr)
 ```
 
 
+#### Volumenes de extracción de agua subterránea 2021.
+![](/images/extract2021.jpg)
+Fuente:Elaboración propia con datos de: [CONAGUA](http://sina.conagua.gob.mx/sina/tema.php?tema=acuiferos&ver=reporte&o=1&n=nacional)
+
+#### Índice Relativo de impacto territorial.(IRIT)
+##### Controlar por la dimensión territorial.
+
+![](/images/irit2021.jpg)
 
 
-#### Disponibilidad de agua subterránea.
+#### Déficit de agua subterránea por acuífero
 ![](/images/disp.jpg)
 
