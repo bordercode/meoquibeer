@@ -22,6 +22,59 @@ library(plotly)
 library(stringr)
 ```
 
+## Heineken Meoqui
+
+Atender ese mercado es factible gracias a la operación de plantas recientemente instaladas en territorio nacional como **HEINEKEN MEOQUI.** que abre operaciones en el 27 de febrero de **2018**, en una región ubicada a una distancia de 314 km.  de la frontera con **Estados Unidos** (via Ojinaga o 454 km. via El Paso, Tx.) y donde la disputa por los recursos hídricos ha sucitado ya severos conflictos entre los diferentes grupos de usuarios. 
+Tal como se documenta por medios internacionales, entre ellos el New york Times de fecha 11 octubre de 2020.
+[TNYT](https://www.nytimes.com/es/2020/10/14/espanol/america-latina/chihuahua-mexico-pago-agua.html).
+
+
+Considerando que la planta  **Heineken de Meoquí** produce  **600 millones de litros** anualmente[@eluyde_heineken_2018], y que el proceso productivo de cerveza  Heineken requiere en promedio de 3.5 lt. agua por litro de cerveza  [@heineken_every_2019], 
+el proceso implica una demanda directa de recursos hídricos en la región de **2,100 millones de litros** anuales.^[ Considerando las cifras oficiales de **Heineken**, sobre volumen de producción anual así como el requerimiento de agua, declarado. Requerimiento de agua de 3.5 hl/hl,  una producción anual de 600 millones de litros[@heineken_every_2019] y el registro de volumen concesionado  en REPDA por parte de la JMAS. que es de 4,462 millones de litros]  
+
+Este volumen representa el **44%** del volumen concesionado al principal usuario de agua subterránea en el municipio: la **Junta Municipal de Agua y Saneamiento de Meoqui**  organismo que destina el recurso para abastecer a la población con un uso clasificado como **público urbano**[@REPDA]^[
+Desde el contexto local, esta demanda de agua representa **14.3** veces la demanda de importantes usuarios de tipo industrial en el Municipio, como la embotelladora de bebidas, refrescos unión. S.A.]
+
+Desde la perspectiva de impacto amabiental, la planta genera una huella hídrica que alcanza los **180 000 000 000** litros anuales. 
+ 
+
+```{r,include = FALSE}
+
+
+#4,762,000,000  LITROS
+   #2100000000/4762000000 
+
+  #2100000000/145924000
+#145924000/4762000000
+
+
+
+repda<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/repda_meoqui.csv")
+
+volumen<-group_by(repda, Uso)%>%
+summarize(Volumen=sum(Volumen.de.extracción.de.aguas.nacionales..m3.a.o.))%>%
+mutate(porc=Volumen/sum(Volumen), p=round(porc,3)*100, Uso=as.factor(Uso) )
+
+uso<-count(repda, Uso)
+
+uso<-group_by(repda, Uso)%>%
+  count()
+
+industrial<-filter(repda, Uso=="INDUSTRIAL")
+
+glimpse(repda)
+names(repda)
+
+str(volumen)
+
+```
+
+```{r,include = FALSE}
+ggplot(volumen, aes(x=reorder(Uso,p),p ))+
+  geom_col()
+```
+
+
 
 #### Volumenes de extracción de agua subterránea 2021.
 ![](/images/extract2021.jpg)
@@ -31,7 +84,9 @@ Fuente:Elaboración propia con datos de: [CONAGUA](http://sina.conagua.gob.mx/si
 ##### Controlar por la dimensión territorial.
 
 ![](/images/irit2021.jpg)
+
 #### Acuíferos sobre explotados Chihuahua 2021.
+
 ![](/images/sobrexxx.jpg)
 Acorde con la metodología de CONAGUA  el estado tiene registrados 29 acuíferos (47%) en esta categoria. El acuífero donde se localliza la planta **Heineken** es un acuífero sobre explotado. Ocupa el lugar 7 dentro del conjunto de acuíferos con problemas de sobre explotación.
 
