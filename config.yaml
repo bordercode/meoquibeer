@@ -1,7 +1,7 @@
 theme: "hugo-theme-novela"
 baseURL: "https://cervecera.netlify.app"
 languageCode: "en-us"
-title: "Cervecera Heineken Meoquí"
+title: "Cervecera Heineken Meoqui"
 pygmentsstyle: 'monokai'
 paginate: 6
 social:
