@@ -24,10 +24,10 @@ library(stringr)
 
 ## Heineken Meoqui
 
-Atender ese mercado es factible gracias a la operación de plantas recientemente instaladas en territorio nacional como **HEINEKEN MEOQUI.** que abre operaciones en el 27 de febrero de **2018**, en una región ubicada a una distancia de 314 km.  de la frontera con **Estados Unidos** (via Ojinaga o 454 km. via El Paso, Tx.) y donde la disputa por los recursos hídricos ha sucitado ya severos conflictos entre los diferentes grupos de usuarios. 
-Tal como se documenta por medios internacionales, entre ellos el New york Times de fecha 11 octubre de 2020.
-[TNYT](https://www.nytimes.com/es/2020/10/14/espanol/america-latina/chihuahua-mexico-pago-agua.html).
 
+Atender ese mercado es factible gracias a la operación de plantas recientemente instaladas en territorio nacional como **HEINEKEN MEOQUI.** que abre operaciones en el 27 de febrero de **2018**, en una región ubicada a una distancia de 314 km.  de la frontera con **Estados Unidos** (via Ojinaga o 454 km. via El Paso, Tx.) y donde la disputa por los recursos hídricos ha sucitado ya severos conflictos entre los diferentes grupos de usuarios. 
+
+[Localización](https://www.google.com.mx/maps/place/Heineken/@28.4489081,-105.5401969,10z/data=!4m5!3m4!1s0x86eb13d5385f30af:0x73e0537cafaa6c6c!8m2!3d28.2918225!4d-105.5095124)
 
 Considerando que la planta  **Heineken de Meoquí** produce  **600 millones de litros** anualmente[@eluyde_heineken_2018], y que el proceso productivo de cerveza  Heineken requiere en promedio de 3.5 lt. agua por litro de cerveza  [@heineken_every_2019], 
 el proceso implica una demanda directa de recursos hídricos en la región de **2,100 millones de litros** anuales.^[ Considerando las cifras oficiales de **Heineken**, sobre volumen de producción anual así como el requerimiento de agua, declarado. Requerimiento de agua de 3.5 hl/hl,  una producción anual de 600 millones de litros[@heineken_every_2019] y el registro de volumen concesionado  en REPDA por parte de la JMAS. que es de 4,462 millones de litros]  
@@ -98,7 +98,20 @@ Acorde con la metodología de CONAGUA  el estado tiene registrados 29 acuíferos
 Este escenario nos muestra que tenemos 42  de 61, e.i. **68.8%** de los acuíferos en la entidad,  con déficit.
 
 
-#### Enfoque ambiental de sobre explotación
-###### IVCAS para controlar por la descarga natural comprometida
 
-Si consideramos un efoque metodológico que considere el equilibrio del ecosistema e incorporamos el requirimento por concepto de **Descarga natural comprometida** (NOM-011-CONAGUA-2015) y definimos  el status de sobre explotación  a partir del nivel de extracción que rebase la capacidad de recarga. El escenario es aún mas complejo, con xxx acuiferos en situación de sobre explotación. Ver  indice de volumen consecionado de agua subterranea IVCAS = vol concesionado + DNC / Recarga.
+
+Tal como la evidente  lo indica, La región en donde se ubica la planta enfrenta creciente presión por competencia entre usuarios dado un entorno bajo condiciones severas de escasez hídrica.
+
+Este escenario se documenta adicionamente por medios internacionales, entre ellos el New york Times de fecha 11 octubre de 2020.
+[TNYT](https://www.nytimes.com/es/2020/10/14/espanol/america-latina/chihuahua-mexico-pago-agua.html).
+
+### Los retos
+
+
+Se prevee que la consolidación del mercado de cerveza global contibue avanzando y nuestro país tiene un papel central para el abastecimiento de la demanda de los paises consumidores.
+
+El proceso de relocalización de la producción muncia tendrá impactos ambientales locales que vale la penda comprender y imlementar estrategias de adaptación. 
+
+Hasta ahora el acuifero 831, no presenta intrusión salida, si bien se encuentra ya en un etapa deficitaria en cuento a los volumnes de recarga, así mismo presenta  niveles de concentración de concesiones para extracción que indican condiciones de aprovechamiento no sustentable.
+
+Los incentivos económicos quedan de manifiesto en la reconfiguracón de la actividad productiva de cerveza a escala global. Mientras este escenario presenta beneficios de corto plazo, algunas regiones en Mexico  comienzan ya ha visualizar los imapactos más allá de indicadores  inmedatos. Meoqui se suma a la lista de sitios estrategicos para atender la demanda, tanto local como primordialmente la Estadounidense.   

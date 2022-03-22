@@ -2,7 +2,7 @@
 title: "Estructura de mercado de la cerveza en México."
 authors:
 - JoseLuis-Manzanares 
-excerpt: Beer economics and water 
+excerpt: Beer economics and water scarcity
 hero: /images/p2.png
 date: 2022-03-09T21:13:14-05:00
 output: html_document
