@@ -11,7 +11,141 @@ library(janitor)
 library(dygraphs)
 library(plotly)
 library(stringr)
+library(foreign)
+library(hrbrthemes)
 ```
+
+
+```{r}
+###   Estimación de IVCAS para 653  con datos de 2021. 
+
+a2021<-read.csv("C:/Users/josel/Desktop/on/I/Cartografía_básica/Acuiferos/a_653_2021.csv")%>%mutate(id_acuif=(clave))
+
+## To get Estados label 
+ 
+
+
+ disp<-read.csv("disp.csv",encoding="UTF-8")
+
+estados<-select(disp, id_acuif, nom_edo)
+
+##  IVCAS por acu[ifero 
+
+ivcas<-a2021%>%mutate(re=Recarga-Extracción,dnc=abs(Disponibilidad-re), ivcas=(Extracción)/(Recarga-dnc), dis1=Recarga-Extracción-dnc, sobrexplo=as.factor(ifelse(ivcas>1,1,0)), ivcas=round(ivcas,2), clase=ifelse(ivcas<1, 0, ifelse(ivcas>=1&ivcas<mean(ivcas),1,ifelse(ivcas>=mean(ivcas)& ivcas<3.031475,2,3))))
+  
+### Clasificación.
+
+clasificacion<-ivcas%>%
+  group_by(clase)%>%
+  count()%>%
+  ungroup()%>%
+  mutate(freq=round(n/sum(n)*100,2))
+
+sobre_nal<-ivcas%>%
+  group_by(sobrexplo)%>%
+  count()
+
+
+## Solo chihuas con labels
+
+Chihuas<-ivcas%>%
+mutate(key=paste0("0",id_acuif),edo=substr(key,1,2))%>%
+filter(edo=="08")
+
+glimpse(Chihuas)
+summary(Chihuas$ivcas)
+
+
+sobrexp_08<-Chihuas%>%
+  group_by(sobrexplo)%>%
+  count()
+
+## 42/61 Sobreexplotados  68.8% Segun ivcas.
+
+42/61
+
+glimpse(ivcas)
+
+summary(Chihuas$ivcas)
+
+```
+
+
+##### Distribución de los 653 acuíferos en el pais acorde con su nivel de sobre explotación.
+
+Nota: Se considera sobre explotado si el volúmen extraido más el volumen considerado para descarga natural comprometida supera la capacidad de recarga del acuífero. Este parametro se mide através del índice de volumen concesionado de agua subterránea ivcas=volumen de extracción en (hm^3) / recarga - descarga natural comprometida.
+
+
+Se distinguen tres niveles de sobre explotación siguiendo la distribución del indicador: 
+
+Moderada si ivcas del acuifero i > 1 y menor o igual al valor medio. 
+
+Elevada: si ivcas del acuifero i > a la media y <= a este valor más una desviación estándar.
+
+Crítica: Si ivcas del acuifero i > al valor medio  más una desviación estándar.
+
+```{r}
+
+## Plot Distribution ivcas
+
+Chihuas %>%
+  ggplot( aes(x=ivcas)) +
+    geom_density(fill="#69b3a2", color="#e9ecef", alpha=0.8) +
+    ggtitle("Distribución del IVCAS") +
+    theme_ipsum()
+
+# Para Chihuas
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.000   0.890   1.270   2.212   2.280  11.550
+
+ ## Distribucion density para MX ivcas
+ 
+ ivcas %>%
+  ggplot( aes(x=ivcas)) +
+    geom_density(fill="#69b3a2", color="#e9ecef", alpha=0.8) +
+    ggtitle("Distribución del IVCAS") +
+    theme_ipsum()
+ 
+## Eliminamos los registos ivcas > 12 esto para poder graficar. Se eliminan dos registros  uno d de BCS (Cabo San Lucas 29.96) y otro de Durano (Oriente agua naval  23.71)-- zona de la Laguna.  
+ 
+ivcas_small<-mutate(ivcas, top=as.factor(ifelse(nom_edo=="Chihuahua", 1,0)))%>%
+  filter(ivcas<=12)
+
+## Criterio: Si ivcas>1.161+1.870475 (media mas desviación estándard) , se considera una sobre explotacion critica.  media >ivcas<= (med + 1sd) elevada sobre explotación y de  1 <ivcas <=med moderada. 
+
+library(Hmisc)
+sd(ivcas$ivcas)
+summary(ivcas_small)
+
+
+## Treshold  sobre explotación critica 1.25
+
+ ggplot(ivcas_small, aes(x=reorder(nom_edo, ivcas), y=ivcas, fill=top)) +
+  geom_boxplot()+
+   scale_fill_manual(values=c(" grey ", "brown1")) +
+   coord_flip()+
+   theme_classic()+
+   labs()+
+xlab("Estado") +
+ylab("Índice de volumen concesionado de agua subterránea") +
+    theme(legend.position = "none")+
+   geom_hline(yintercept =mean(ivcas$ivcas), linetype="dashed",color = "red2", size=.5)+
+annotate(geom = "text", x = 6, y = mean(ivcas$ivcas)+sd(ivcas$ivcas), label = "Crítica", hjust = "left", color="grey")+
+annotate(geom = "text", x = 4, y = mean(ivcas$ivcas), label = "Elevada", hjust = "left", color="grey")+   
+annotate("rect", xmin = "Campeche", xmax = "Chihuahua", ymin =  mean(ivcas$ivcas), ymax = mean(ivcas$ivcas)+sd(ivcas$ivcas),
+           alpha = .09, fill = "yellow")+
+annotate("rect", xmin = "Campeche", xmax = "Chihuahua", ymin =  mean(ivcas$ivcas)+sd(ivcas$ivcas), ymax = 11.55,
+           alpha = .1, fill = "red")
+   
+   
+## Por motivos de visualización, se excluyen dos outliers una de chihuas 
+
+ ggsave("C:/Users/josel/Desktop/on/I/2022/beer_production/dia_munidal_agua/maps/boxplot_ivcas.jpg", width = 23, height = 17, units = "cm",dpi=300)
+
+
+ 
+```
+
 
 
 ```{r}
@@ -19,7 +153,110 @@ file.path(getwd(), "")
 list.files(path=".", pattern=NULL, all.files=FALSE,
     full.names=FALSE)
 
-a<-read.csv("ACUÍFEROS.csv")
+a<-read.csv("ACUÍFEROS.csv")%>%
+  select(Año:Cantidad)
+names(a)
+
+sobrexp<-filter(a,Parámetro=="Sobre explotado", Año=="2021",  Estado=="Chihuahua")%>%
+select(Clave.acuifero,Cantidad)%>%
+  rename(id_acuif=Clave.acuifero,status=Cantidad)
+
+write.csv(sobrexp,"C:/Users/josel/Desktop/on/I/Cartografía_básica/Aprovechamientos/Chihuahua/sobrexxx.csv")
+
+names(sobrexp)
+
+## Acorde con la metodología de CONAGUA, al 2021 se tienen 157 acuiferos sobre explotados, esta candidad representa el 24.04%  de total.  En el caso de Chihuahua se trata de 29 acuiferos que representan el 47.5% del total (entre ellos el Moequi-Delicias). No obstante, si consideramos una metodología que considere el equilibrio natual con el vloumen necesario para la Descarga natural comprometida y calculamos el ivcas= concesion vol+DNC/recarga
+
+
+157/653
+
+
+## Vamos a estimar el indicador de concentración relativa de extracción. para 2011 y 2021. Se estima como el A/B, donde A= extraccion acuifero i (hm3 año) / area (km) y B= extraccion total del estado /superficie total del estado.
+
+extracción<-a%>%filter(Parámetro=="Extraccion",Año=="2011")%>%rename(ext=Cantidad)%>%
+  select(Clave.acuifero,ext)
+
+area11<-a%>%filter(Parámetro=="Área",Año=="2011")%>%
+  rename(km2=Cantidad)%>%
+  left_join(extracción)%>%
+  group_by(Estado)%>%
+  mutate(num=ext/km2, den=sum(ext)/sum(km2), iris=round((num/den), 2),prom_state=mean(iris))%>%
+  ungroup()%>%
+  mutate(prom_nal=mean(prom_state))
+
+names(area11)
+area11<-select(area11,Clave.acuifero, iris)%>%
+  rename(iris11=iris)
+### 2021  IRIS 
+
+
+extracción<-a%>%filter(Parámetro=="Extraccion",Año=="2021")%>%rename(ext=Cantidad)%>%
+  select(Clave.acuifero,ext)
+
+area21<-a%>%filter(Parámetro=="Área",Año=="2021")%>%
+  rename(km2=Cantidad)%>%
+  left_join(extracción)%>%
+  group_by(Estado)%>%
+  mutate(num=ext/km2, den=sum(ext)/sum(km2), iris21=round((num/den), 2),prom_state=mean(iris21))%>%
+  ungroup()%>%
+  mutate(prom_nal=mean(prom_state))%>%
+  left_join(area11)%>%
+  rename(id_acuif=Clave.acuifero)
+
+glimpse(area21)
+file.path(getwd(), "")
+
+write.csv(area21,"iris21.csv")
+  
+```
+
+```{r}
+a<-read.csv("ACUÍFEROS.csv")%>%
+  select(Año:Cantidad)
+names(a)
+
+
+recarga<-a%>%filter(Parámetro=="Recarga", Año=="2021")%>%rename(r=Cantidad)%>%
+  select(Estado,Nombre.de.acuifero,Clave.acuifero,r)
+
+extraccion<-a%>%filter(Parámetro=="Extraccion",Año=="2021")%>%rename(ext=Cantidad)%>%
+  select(Estado,Clave.acuifero,Nombre.de.acuifero,ext)%>%
+  left_join(recarga)%>%
+    rename(id_acuif=Clave.acuifero)
+
+disp<-read.dbf("C:/Users/josel/Desktop/on/I/Cartografía_básica/ACUIFEROS/Acuiferos_disponibilidad_2020.dbf")%>%
+  select(id_acuif,disp_hm3,nom_edo)
+
+estados<-select(disp, id_acuif, disp_hm3)
+
+ivcas<-disp%>%left_join(extraccion)%>%
+mutate(A=(r-ext), consumo=dec+ext,i=consumo/r)
+
+names(disp)
+
+```
+
+
+```{r}
+data<-read.csv("C:/Users/josel/Desktop/on/I/Cartografía_básica/Aprovechamientos/Mexico/sup.csv")
+names(data)
+
+df<-data%>%rename(vol=USO_SUP,nombre=REGIONAL,id_acuif=CUEHIDHOM,lat=KML_STYLE, lon=LATDEC,uso=TITULAR, nombreac=SYMBOL,edo=CVE_ACUHOM)
+
+df_final<-select(df,vol,nombre,id_acuif,lat,lon,uso,nombreac,edo)%>%
+  mutate(lon=as.numeric(lon),lat=as.numeric(lat))%>%
+  rename(LONDEC=lon,LATDEC=lat)
+
+glimpse(df_final)
+
+bc<-read.csv( "C:/Users/josel/Desktop/on/I/2019/CONVID/gis/aprovechamientos_a_subterranea/concesiones_data.csv")
+
+write.csv(df_final,"C:/Users/josel/Desktop/on/I/Cartografía_básica/Aprovechamientos/Chihuahua/extrac2015.csv")
+
+
+glimpse(bc)
+```
+```{r}
 
 names(a)
 
@@ -46,8 +283,6 @@ counts<-filter(a, Estado=="Chihuahua"& Parámetro=="Extraccion")%>%
 
 glimpse(a_2021)
 
-
-
 ```
 
 
@@ -55,12 +290,8 @@ glimpse(a_2021)
 
 ### Prices.
 
-
-
 p<-read.csv("prices.csv")%>%
   mutate(ciudad=as.factor(ciudad), usd=Total/20.3627, cdmx=as.factor(ifelse(ciudad=="Ciudad de Mexico (Mexico)",1,ifelse(ciudad=="Copenhage (Dinarnarca)",2,0))))
-
-
 
 plotp<-ggplot(p, aes(x=reorder(ciudad,usd),usd, fill=cdmx ))+
   geom_col()+
@@ -73,8 +304,6 @@ plotp<-ggplot(p, aes(x=reorder(ciudad,usd),usd, fill=cdmx ))+
                                 "deepskyblue4", "red"))
 
 plotp
-
-
 
 tarifas<-read.csv("t.csv")%>%
   mutate(i=as.numeric(i)/20.3627,d=d/20.3627,c=c/20.3627)%>%
@@ -95,11 +324,6 @@ tarifas<-read.csv("t.csv")%>%
    
 dom_indus_plot 
 ## Plot para comparar tarifas de agua para uso doméstico entre ciudades.
- 
- 
- 
- 
- 
 
 ## Plot  mundial 
 
@@ -115,7 +339,10 @@ dom_indus_plot
 
 ```
 
+
+
 ```{r}
+
 indus<-mutate(t,del=as.factor(ifelse(ciudad=="Delicias",1,0)), tarifa=tarifa/20.3627)%>%
 filter(tipo=="i")
   
