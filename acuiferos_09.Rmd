@@ -18,7 +18,6 @@ library(hrbrthemes)
 
 ```{r}
 ###   Estimación de IVCAS para 653  con datos de 2021. 
-
 a2021<-read.csv("C:/Users/josel/Desktop/on/I/Cartografía_básica/Acuiferos/a_653_2021.csv")%>%mutate(id_acuif=(clave))
 
 ## To get Estados label 
