@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Cervecera Heineken Meoqui</title>
+    <link>https://cervecera.netlify.app/post/</link>
+    <description>Recent content in Posts on Cervecera Heineken Meoqui</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Mar 2022 21:13:14 -0500</lastBuildDate><atom:link href="https://cervecera.netlify.app/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Motivación</title>
+      <link>https://cervecera.netlify.app/post/intro2/</link>
+      <pubDate>Thu, 10 Mar 2022 21:13:14 -0500</pubDate>
+      
+      <guid>https://cervecera.netlify.app/post/intro2/</guid>
+      <description>¿Por qué es importante analizar el uso de agua en la producción de cerveza en México?Acorde con datos de 2020, la cerveza es la bebida alcohólica de mayor consumo en el mundo.
+Se estima que su producción en México involucra una cadena de valor cuya integración está distribuida a lo largo 168 actividades económicas(INEGI, 2020).
+El insumo principal para su elaboración es el agua, (el agua representa el 95% de este producto).</description>
+    </item>
+    
+    <item>
+      <title>Estructura de mercado de la cerveza en México.</title>
+      <link>https://cervecera.netlify.app/post/maeket_structure/</link>
+      <pubDate>Wed, 09 Mar 2022 21:13:14 -0500</pubDate>
+      
+      <guid>https://cervecera.netlify.app/post/maeket_structure/</guid>
+      <description>¿Qué papel tiene la disponibilidad de agua en México en la configuración de la estructura del mercado de la cerveza?La industria cervecera mundial se integra bajo una estructura oligopólica.
+En nuestro país, este esquema de mercado para la cerveza tiene un grado mayor de concentración y de hecho dos grandes consorcios son los que dominan el mercado: AB InBev (Empresa de capital Belga) antes grupo Modelo, empresa fundada en ciudad de México y Heineken (empresa holandesa) antes Cuauhtémoc-Moctezuma fundada en Monterrey, Nuevo León.</description>
+    </item>
+    
+    <item>
+      <title>Meoqui y recursos Hídricos a escala regional</title>
+      <link>https://cervecera.netlify.app/post/agua/</link>
+      <pubDate>Tue, 08 Mar 2022 21:13:14 -0500</pubDate>
+      
+      <guid>https://cervecera.netlify.app/post/agua/</guid>
+      <description>Heineken MeoquiAtender ese mercado es factible gracias a la operación de plantas recientemente instaladas en territorio nacional como HEINEKEN MEOQUI. que abre operaciones en el 27 de febrero de 2018, en una región ubicada a una distancia de 314 km. de la frontera con Estados Unidos (via Ojinaga o 454 km. via El Paso, Tx.) y donde la disputa por los recursos hídricos ha sucitado ya severos conflictos entre los diferentes grupos de usuarios.</description>
+    </item>
+    
+  </channel>
+</rss>

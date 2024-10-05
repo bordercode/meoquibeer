@@ -1,0 +1,68 @@
+---
+title: "Motivación"
+authors:
+- JoseLuis-Manzanares 
+excerpt: Water and beer. Why location matters? 
+hero: /images/beera.jpg
+date: 2022-03-10T21:13:14-05:00
+output: html_document
+bibliography: referencias.bib
+link-citations: yes
+csl: apa-5th-edition.csl
+math: true
+---
+
+
+
+```{r setup, include=FALSE, warning=FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+suppressPackageStartupMessages(library(tidyverse))
+library(janitor)
+library(dygraphs)
+library(plotly)
+library(stringr)
+```
+
+
+
+
+### ¿Por qué es importante analizar el uso de agua en la producción de cerveza en México? 
+
+Acorde con datos de 2020, la cerveza es la bebida alcohólica de mayor consumo en el mundo.  
+
+Se estima que su producción en México involucra una cadena de valor cuya integración está distribuida a lo largo  **168 actividades económicas**[@INEGI].  
+
+
+El insumo principal  para su elaboración es el agua, (el agua representa el 95% de este producto). Una metodología comúnmente utilizada,  para medir la intensidad en el uso de los recursos hídricos de un producto,  es a través del concepto de la huella hídirca (HH). ^[un concepto, que si bien, esta en desarollo y tiene importantes críticas debido a la hetereogeneidad de las condiciones productivas, que incluyen las variables ambientales, es útil como base de comparación.] 
+
+Se estima que la producción de un litro de cerveza en promedio en el mundo implica una huella hídrica de **298** litros,[@mekonnen_green_2011] y la produción de **Insumos agrícolas** fundamentales como la **Cebada** y el **Lúpulo**,  añaden a la **huella hídrica** que genera la producción de la cerveza. 
+
+
+Sin embargo, en México el estimado de la HH es de 406 litros, más aún, al considerar el impacto por tipo de agua **(verde, azul y gris)**, vemos que nuestro país tiene una incidencia particularmente severa en el componente azul (agua extraída de los acuíferos) cuyo valor supera en 11.3 veces el estándar global, ya que el estimado de HH es, 181 litros, mientras el estándar mundial es de 16 litros[@mekonnen_green_2011] únicamente, por lo que, el impacto de la cadena de valor desde el punto de vista de los recursos hídricos de este producto en Mexico, es especialmente relevante. 
+
+
+Acorde con el Instituto Mexicano de Tecnología del Agua, la producción de Cebada tiene una huella hídrica de  49 metros cúbicos/ ton.[@hh]  
+
+Por lo que al considerar la producción de Cebada en grano reportada por el Sistema de Información Agroalimentaria de Consulta en México para 2020, que fue de 864,293.27 ton.[@siacon], se observa una HH de  42.3 millones de metros cúbicos de agua (subterránea y superficial). 
+
+De manera similar estudios especializados sobre Huella hídrica (HH), reportan que el componente de agua azul en la HH de la Cebada producida en México es 12 veces el estándar internacional. Con 2693 (Verde=1442,Aazul=1200,Gris=52) y 1977 (V=1685,A=110,G=182)  metros cÚbicos/ton. respectivamente[@mekonnen_green_2011].^[Si bien, debido a que existe una gran variabilidad asociada a las condiciones productivas regionales  los estimados de HH han sido objeto de controversía. 
+En todo caso, la metodología para estimación de HH debe diseñarse considerando las variables específicas de la región de estudio. Adicionalmente, es importante notar que el impacto de la huella hídrica de la producción de insumos  como la **Cebada**, no necesariamente recae directamente en la región donde se ubica la compañía productora de cerveza, pero recae en la región agrícola que produce la Cebada, (en el caso de México, Guanajuato es la principal entidad  productora de Cebada generando 1 de cada 3 toneladas que se producen en México o 36.8 % de la producción total nacional, [@INEGI])].   
+![](/images/cebada.png)
+![](/images/lúpulo.jpg)
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Referencias
