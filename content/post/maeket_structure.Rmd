@@ -183,7 +183,7 @@ Desde el punto de vista de los recursos hídricos a escala local, esta configura
 
 -  Exportación neta de recursos hídricos
 
--  Intensificación de la compentencia entre usuarios del recurso.  
+-  Intensificación de la compentencia entre usuarios del recurso.
 
 En contraste con el costo del agua en los países a donde se exporta la cerveza,  en México, el costo de este insumo representa sólo el **0.8%** del costo total de los insumos necesarios para su producción[@INEGI]. 
 
