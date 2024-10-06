@@ -1,7 +1,7 @@
 theme: "hugo-theme-novela"
 baseURL: "https://sochigeo2024-ponencia.netlify.app"
 languageCode: "en-us"
-title: "SOCHIGEO 2024 en Chillán"
+title: "SOCHIGEO 2024 en Chillán3"
 pygmentsstyle: 'monokai'
 paginate: 6
 social:
