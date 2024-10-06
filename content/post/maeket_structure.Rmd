@@ -87,10 +87,31 @@ top20<-x%>%head(21)%>%filter(País!="European Union")%>%
   rename(Valor=Trade.Value.1000USD)%>%
   mutate(tres=as.factor(ifelse(País=="Mexico",1 ,ifelse(País=="Netherlands",2,(ifelse(País=="Belgium",3 ,0))))))
 
+write.csv(top20, "globe.csv")
+getwd()
 average<-summarize(top20,promedio=mean(Valor))
 ```
 
 **Principales paises exportadores de Cerveza según Valor  2019**
+
+```{r}
+library("threejs")
+library("maps")
+
+world<-read.csv("C:/Users/jasie/Desktop/desktop/web/meoquibeer/content/post/globe.csv",fileEncoding = "Latin1")%>%
+mutate(median=median(Valor), cstd=Valor/median)  
+
+
+value  <- 100 * world$cstd / max(world$cstd)
+
+
+col <- rainbow(100,start=3/8,end=8/8)
+col <- col[floor(length(col)*(100-value)/100)+1]
+
+
+globejs(lat=world$Latitude, long=world$Longitude, value=value, color=col,     atmosphere=TRUE)
+```
+
 
 ```{r, fig.height = 6, fig.width=8}
 library(scales)
@@ -188,14 +209,14 @@ En contraste con el costo del agua en los países a donde se exporta la cerveza,
 
 **Mapa 1  Plantas Heineken, ABInBev, Constellation Brands**
 
-```{r}
+```{r, warning=FALSE, }
 beer<-read.csv("C:/Users/jasie/Desktop/desktop/web/meoquibeer/mexico_brewery_plants.csv", fileEncoding = "Latin1")
 
 beer_sf <- st_as_sf(beer, coords = c("longitude", "latitude"), crs = 4326)
 
 
 mapviewOptions(vector.palette=colorRampPalette(c("blue","orange","red")))
-names(beer_sf)
+
 
 mapa<-mapview(beer_sf, map.types =  "OpenStreetMap.DE",cex="hectolitros.año.Mill", zcol="hectolitros.año.Mill", layer.name= "Millones/Hectolitros/año",legend = TRUE,homebutton =FALSE)
 
