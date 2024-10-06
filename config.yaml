@@ -1,7 +1,7 @@
 theme: "hugo-theme-novela"
 baseURL: "https://sochigeo2024-ponencia.netlify.app"
 languageCode: "en-us"
-title: "Cervecera Heineken Meoqui"
+title: "SOCHIGEO 2024 en ÑUBLE"
 pygmentsstyle: 'monokai'
 paginate: 6
 social:
