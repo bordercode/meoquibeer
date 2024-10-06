@@ -5,7 +5,7 @@ bio: José Luis Manzanares Rivera es un investigador mexicano especializado en e
 featured: true
 social:
 - title: X
-  url: https://twitter.com/JLManzanaresR
+  url: https://X.com/JLManzanaresR
 - title: youtube
   url: https://www.youtube.com/watch?v=uJMiS4pNzQ4
 - title: instagram
