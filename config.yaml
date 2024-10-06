@@ -1,5 +1,5 @@
 theme: "hugo-theme-novela"
-baseURL: "https://cervecera.netlify.app"
+baseURL: "https://sochigeo2024-ponencia.netlify.app"
 languageCode: "en-us"
 title: "Cervecera Heineken Meoqui"
 pygmentsstyle: 'monokai'
