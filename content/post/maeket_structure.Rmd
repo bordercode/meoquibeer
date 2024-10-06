@@ -88,7 +88,7 @@ top20<-x%>%head(21)%>%filter(País!="European Union")%>%
   mutate(tres=as.factor(ifelse(País=="Mexico",1 ,ifelse(País=="Netherlands",2,(ifelse(País=="Belgium",3 ,0))))))
 
 write.csv(top20, "globe.csv")
-getwd()
+
 average<-summarize(top20,promedio=mean(Valor))
 ```
 
@@ -98,7 +98,7 @@ average<-summarize(top20,promedio=mean(Valor))
 library("threejs")
 library("maps")
 
-world<-read.csv("C:/Users/jasie/Desktop/desktop/web/meoquibeer/content/post/globe.csv",fileEncoding = "Latin1")%>%
+world<-read.csv("C:/Users/jasie/Desktop/desktop/web/meoquibeer/content/post/globe_geo.csv",fileEncoding = "Latin1")%>%
 mutate(median=median(Valor), cstd=Valor/median)  
 
 
