@@ -74,7 +74,7 @@ La evidencia empírica muestra que la trayectoria de exportación de cerveza de 
 
 
 ```{r}
-x<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/x_country2019.csv")
+x<-read.csv("C:/Users/jasie/Desktop/desktop/web/meoquibeer/x_country2019.csv", encoding = "latin1")
 
 # cifras de exportacion en litros 4465290000/1000000  x
 
@@ -120,8 +120,7 @@ ggplotly(px)
 
 file.path(getwd(), "")
 
-beer<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/beerx21_03.csv")
-
+beer<-read.csv("C:/Users/jasie/Desktop/desktop/web/meoquibeer/beerx21_03.csv", encoding = "latin1")
 
 beer2<-clean_names(beer)
 
