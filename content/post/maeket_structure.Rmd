@@ -94,7 +94,7 @@ average<-summarize(top20,promedio=mean(Valor))
 
 **Principales paises exportadores de Cerveza según Valor  2019**
 
-```{r}
+```{r, echo=FALSE,fig.height = 7, fig.width = 8}
 library("threejs")
 library("maps")
 
@@ -115,6 +115,7 @@ globejs(lat=world$Latitude, long=world$Longitude, value=value, color=col,     at
 
 ```{r, fig.height = 6, fig.width=8}
 library(scales)
+
 
 px<-ggplot(top20, aes(x=reorder(País,Valor), Valor, fill=tres))+
   geom_col()+
