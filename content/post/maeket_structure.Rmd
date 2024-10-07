@@ -229,7 +229,7 @@ leafem::addMouseCoordinates(mapa)%>%setView(zoom = 3.8, -102.7018, 22.9524)
 
 
 
-![](/images/Calera.jpg)
+![](/images/calera.jpg)
 
 ![](/images/calera2.jpg)
 ![](/images/calera3.jpg)
