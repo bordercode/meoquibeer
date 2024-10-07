@@ -13,14 +13,7 @@ math: true
 ---
 
 
-```{r setup, include=FALSE, warning=FALSE, message = FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-suppressPackageStartupMessages(library(tidyverse))
-library(janitor)
-library(dygraphs)
-library(plotly)
-library(stringr)
-```
+
 
 ## Heineken Meoqui
 
@@ -38,40 +31,9 @@ Desde el contexto local, esta demanda de agua representa **14.3** veces la deman
 Desde la perspectiva de impacto amabiental, la planta genera una huella hídrica que alcanza los **180 000 000 000** litros anuales. 
  
 
-```{r,include = FALSE}
 
 
-#4,762,000,000  LITROS
-   #2100000000/4762000000 
 
-  #2100000000/145924000
-#145924000/4762000000
-
-
-repda<-read.csv("C:/Users/jasie/Desktop/desktop/web/meoquibeer/repda_meoqui.csv", fileEncoding = "Latin1")
-
-volumen<-group_by(repda, Uso)%>%
-summarize(Volumen=sum(Volumen.de.extracción.de.aguas.nacionales..m3.a.o.))%>%
-mutate(porc=Volumen/sum(Volumen), p=round(porc,3)*100, Uso=as.factor(Uso) )
-
-uso<-count(repda, Uso)
-
-uso<-group_by(repda, Uso)%>%
-  count()
-
-industrial<-filter(repda, Uso=="INDUSTRIAL")
-
-glimpse(repda)
-names(repda)
-
-str(volumen)
-
-```
-
-```{r,include = FALSE}
-ggplot(volumen, aes(x=reorder(Uso,p),p ))+
-  geom_col()
-```
 
 
 
