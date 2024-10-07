@@ -48,8 +48,7 @@ Desde la perspectiva de impacto amabiental, la planta genera una huella hídrica
 #145924000/4762000000
 
 
-
-repda<-read.csv("C:/Users/josel/Desktop/on/web/meoquibeer/repda_meoqui.csv")
+repda<-read.csv("C:/Users/jasie/Desktop/desktop/web/meoquibeer/repda_meoqui.csv", fileEncoding = "Latin1")
 
 volumen<-group_by(repda, Uso)%>%
 summarize(Volumen=sum(Volumen.de.extracción.de.aguas.nacionales..m3.a.o.))%>%
@@ -107,15 +106,16 @@ Este escenario se documenta adicionamente por medios internacionales, entre ello
 
 
 Conflictos por incumplimiento en agricultura por contrato para Cebada 2023. **Planta Calera, Zacatecas**  *ABInBev*
-[La JOrnada](https://www.jornada.com.mx/2023/11/28/estados/028n1est)
+[Zacatecas](https://www.jornada.com.mx/2023/11/28/estados/028n1est)
 
 
 Conflicto en Puebla por incumplimiento en precio pactada para cultivo de Cebada Maltera  2024  **Heineken**
 
-[Heineken](https://www.jornada.com.mx/2024/09/19/estados/030n1est)
+[Puebla](https://www.jornada.com.mx/2024/09/19/estados/030n1est)
 
 ![](/images/Puebla2.jpg)
 Conflicto en Hidalgo por reducción en precio pactado en contratos para cultivar Cebada  **ABInBev**
+[Hidalgo](https://www.jornada.com.mx/2023/05/18/estados/029n1est)
 ![](/images/hidalgo.jpg)
 [ABInBev](https://www.jornada.com.mx/2023/05/18/estados/029n1est)
 
