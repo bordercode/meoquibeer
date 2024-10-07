@@ -222,7 +222,7 @@ mapviewOptions(vector.palette=colorRampPalette(c("blue","orange","red")))
 
 mapa<-mapview(beer_sf, map.types =  "OpenStreetMap.DE",cex="hectolitros.año.Mill", zcol="hectolitros.año.Mill", layer.name= "Millones/Hectolitros/año",legend = TRUE,homebutton =FALSE)
 
-leafem::addMouseCoordinates(mapa)%>%setView(zoom = 3.6, -102.7018, 22.9524)
+leafem::addMouseCoordinates(mapa)%>%setView(zoom = 3.8, -102.7018, 22.9524)
 
 
 ```
