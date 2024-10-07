@@ -232,7 +232,6 @@ leafem::addMouseCoordinates(mapa)%>%setView(zoom = 3.8, -102.7018, 22.9524)
 ![](/images/calera.jpg)
 
 ![](/images/calera2.jpg)
-![](/images/calera3.jpg)
 
 En otras palabras, desde el punto de vista económico, la producción de cerveza, en el caso de México, tiene una cadena de producción integrada en el sector agro-industrial, un mercado altamente concentrado (duopolio de capital extranjero) asociado a una  **estrategia de relocalización** de la producción de las principales corporaciónes a escala global en la industria en donde un país: **Estados Unidos**, es el mercado principal que recibe los recursos hídricos asociados a la cerveza exportada. 
 
