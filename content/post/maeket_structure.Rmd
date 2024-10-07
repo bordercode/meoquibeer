@@ -137,6 +137,7 @@ ggplotly(px)
 
 *Fuente*: Elaboración propia con datos de  [Banco Mundial 2019](https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2019/tradeflow/Exports/partner/WLD/product/220300)
 
+![](/images/Calera.jpg)
 
 ```{r, include=FALSE}
 
