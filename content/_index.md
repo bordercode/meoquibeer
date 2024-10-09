@@ -1,6 +1,6 @@
 ---
 hero:
-  heading: Producción de cerveza en la frontera México Estados Unidos Estrategia de desarrollo sustentable
+  heading: Producción de cerveza en la frontera México Estados Unidos Estrategia de desarrollo sustentabl
 para la región o exportación indirecta de recursos hídricos
   maxWidthPX: 652
 seo:
