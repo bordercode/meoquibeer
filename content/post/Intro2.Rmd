@@ -28,7 +28,7 @@ library(stringr)
 
 ### ¿Por qué es importante analizar el uso de agua en la producción de cerveza en México? 
 
-![](/images/lastcall.jpg)
+![](/images/lastcall2.jpg)
 
 
 Acorde con datos de 2020, la cerveza es la bebida alcohólica de mayor consumo en el mundo.  
