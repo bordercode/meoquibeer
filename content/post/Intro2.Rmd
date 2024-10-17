@@ -25,7 +25,7 @@ library(stringr)
 
 
 
-### ¿Por qué es importante analizar el uso de agua en la producción de cerveza en México? 
+### ¿Por qué es importante analizar el uso de agua en la producción de cerveza en México?
 
 ![](/images/lastcall2.jpg)
 
