@@ -24,7 +24,6 @@ library(stringr)
 ```
 
 
-![](/images/Waterdrops.png)
 
 ### ¿Por qué es importante analizar el uso de agua en la producción de cerveza en México? 
 
